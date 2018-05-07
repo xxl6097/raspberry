@@ -16,6 +16,19 @@ public class RaspPiBean implements Serializable {
      * state : off
      */
 
+
+
+    /*{
+        "attributes": {
+        "friendly_name": "小米插座增强版",
+                "icon": "mdi:power-socket"
+    },
+        "entity_id": "switch.mi_socket_plus",
+            "last_changed": "2018-05-07T06:59:52.524040+00:00",
+            "last_updated": "2018-05-07T06:59:52.524040+00:00",
+            "state": "unavailable"
+    }*/
+
     private AttributesBean attributes;
     private String entity_id;
     private String last_changed;

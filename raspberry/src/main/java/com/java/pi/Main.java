@@ -1,30 +1,33 @@
 package com.java.pi;
 
+import com.java.pi.api.MiSocketPlus;
 import com.java.pi.httpserver.Server;
 import com.java.pi.wifi.LanDiscover;
 
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(args));
+//        startServer(args);
+//        scanLan();
+        MiSocketPlus.keepMiSocketPlusOn(30);
+    }
 
+
+
+    private static void startServer(String[] args){
+        System.out.println(Arrays.toString(args));
         try {
             Server.start(Integer.parseInt(args[0]));
         } catch (IOException var2) {
             var2.printStackTrace();
         }
-
-        System.out.println(System.getProperty("user.dir"));
-
-        scanLan();
     }
 
 
     private static void scanLan(){
+        System.out.println(System.getProperty("user.dir"));
         LanDiscover lanDiscover = new LanDiscover();
         final String pcMacAddr = "C8:E7:D8:DE:5C:62";
         final String iosMacAddr = "50:7A:55:E9:9F:CC";
