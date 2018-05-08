@@ -138,7 +138,11 @@ public class PiImpl extends AbstractGetHttpFactory {
                     result = RaspBerryApi.MiSocketTurnOff();
                 }
                 if (result.equals("[]")){
-                    RaspBerryApi.HomeAssistantRestart();
+                    try {
+                        RaspBerryApi.HomeAssistantRestart();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
             }else if(entityid.equals("misocketplushusb")){
                 if (state.equals("on")){
@@ -147,17 +151,29 @@ public class PiImpl extends AbstractGetHttpFactory {
                     result = RaspBerryApi.MiSocketUSBTurnOff();
                 }
                 if (result.equals("[]")){
-                RaspBerryApi.HomeAssistantRestart();
-            }
+                    try {
+                        RaspBerryApi.HomeAssistantRestart();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
         }else if(entityid.equals("mac")){
             result = RaspBerryApi.WakeUpMyMacOs();
         }else if(entityid.equals("homeassistant")){
             if (state.equals("restart")){
-                result = RaspBerryApi.HomeAssistantRestart();
+                try {
+                    result = RaspBerryApi.HomeAssistantRestart();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         }else if(entityid.equals("homeassistant")){
             if (state.equals("restart")){
-                result = RaspBerryApi.HomeAssistantRestart();
+                try {
+                    result = RaspBerryApi.HomeAssistantRestart();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         }
 

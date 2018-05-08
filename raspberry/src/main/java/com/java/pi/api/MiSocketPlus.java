@@ -8,11 +8,11 @@ import com.java.pi.util.RaspberryConst;
 
 public class MiSocketPlus {
     private static Thread miSocketStateThread = null;
-    public static MIState miSocketPlusState(){
+    public static MIState getSocketPlusState(){
         RaspPiBean piBean = RaspBerryApi.getDeviceState(RaspberryConst.ENTITY.MI_SOCKET);
         if (piBean!=null){
             String state = piBean.getState();
-            if (Util.isEmpty(state)){
+            if (!Util.isEmpty(state)){
                 if (state.equals(MIState.UNAVAILABLE.value())){
                     //不可用
                     return MIState.UNAVAILABLE;
@@ -69,20 +69,24 @@ public class MiSocketPlus {
             @Override
             public void run() {
                 try {
+                    String result = "";
                     while (true){
-                        MIState state = miSocketPlusState();
+                        MIState state = getSocketPlusState();
+                        Logc.i("keepMiSocketPlusOn:"+state.value());
                         if (state == MIState.OFF){
-                            String result = RaspBerryApi.MiSocketTurnOn();
-                            Logc.i("keepMiSocketPlusOn:"+result);
+                            result = RaspBerryApi.MiSocketTurnOn();
+                            Logc.i("MiSocketTurnOn:"+result);
                             if (!Util.isEmpty(result)){
                                 if (result.equals("[]")){
-                                    RaspBerryApi.HomeAssistantRestart();
+                                    result = RaspBerryApi.HomeAssistantRestart();
+                                    Logc.i("HomeAssistantRestart:"+result);
                                 }
                             }else{
                             }
                         }else if (state == MIState.ON){
                         }else{
-                            RaspBerryApi.HomeAssistantRestart();
+                            result = RaspBerryApi.HomeAssistantRestart();
+                            Logc.i("HomeAssistantRestart:"+result);
                         }
                         Thread.sleep(time * 1000);
                     }

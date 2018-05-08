@@ -30,10 +30,12 @@ public class RaspBerryApi {
     }
 
 
-    public static String HomeAssistantRestart() {
+    public static String HomeAssistantRestart() throws InterruptedException {
         String body = "";
         String path = RaspberryConst.SERVICES.HB_RESTART;
-        return RaspberryHttp(path, body);
+        String result = RaspberryHttp(path, body);
+        Thread.sleep(60*1000);
+        return result;
     }
 
     public static String WakeUpMyMacOs() {
@@ -126,11 +128,9 @@ public class RaspBerryApi {
     public static RaspPiBean getDeviceState(String entity) {
 //        http://192.168.31.114:8123/api/states/switch.mi_socket_plus
         String host = RaspberryConst.Pi.HOST + RaspberryConst.SERVICES.STATE + entity;
-        String body = "";
         try {
             System.out.println("host:" + host);
-            System.out.println("body:" + body);
-            String result = SimpleHttpUtils.post(host, body.getBytes());
+            String result = SimpleHttpUtils.get(host);
             RaspPiBean raspPiBean = GsonUtil.getInstance().toObject(result, RaspPiBean.class);
             System.out.println(result);
             return raspPiBean;

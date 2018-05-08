@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
 //        startServer(args);
 //        scanLan();
-        MiSocketPlus.keepMiSocketPlusOn(30);
+        MiSocketPlus.keepMiSocketPlusOn(3);
     }
 
 
