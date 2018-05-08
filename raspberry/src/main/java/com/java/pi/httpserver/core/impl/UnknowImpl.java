@@ -1,8 +1,10 @@
 package com.java.pi.httpserver.core.impl;
 
 
+import com.java.pi.httpserver.bean.ApiResult;
 import com.java.pi.httpserver.core.AbstractHttpBusiness;
 import com.java.pi.httpserver.core.http.NanoHTTPD;
+import com.java.pi.httpserver.util.GsonUtil;
 import com.java.pi.util.Logc;
 
 import java.util.Map;
@@ -31,7 +33,7 @@ public class UnknowImpl extends AbstractHttpBusiness {
             e.printStackTrace();
         }
         String data = ";"+callback + "("+ html+");";*/
-        return "UnknowImpl";
+        return GsonUtil.getInstance().toJson(new ApiResult<String>());
     }
 
     @Override
