@@ -11,6 +11,8 @@ public abstract class AbstractHttpBusiness implements IHttpObserver<NanoHTTPD.IH
     public NanoHTTPD.Response onHttpSession(NanoHTTPD.IHTTPSession session) {
         if (session.getMethod().name().equalsIgnoreCase("POST")) {
             String resule = onPost(session);
+            if (resule == null)
+                return null;
             return new NanoHTTPD.Response(NanoHTTPD.Response.Status.OK, "text/plain; charset=UTF-8",resule);
         }else{
             if (session == null)
@@ -22,6 +24,9 @@ public abstract class AbstractHttpBusiness implements IHttpObserver<NanoHTTPD.IH
             if (param == null)
                 return null;
             String resule = onGet(path, param);
+            if (resule == null){
+                return null;
+            }
             return new NanoHTTPD.Response(NanoHTTPD.Response.Status.OK, "text/plain; charset=UTF-8",resule);
 
         }

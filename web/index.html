@@ -22,9 +22,17 @@
         <input id="sendText" type="text" placeholder="设置log过滤"/>
     </div>
     <div style="margin-top: 10px">
-        <div style="display: inline-block;" class="div-left-first">日志总开关：</div>
+        <div style="display: inline-block;" class="div-left-first">Yeelight吸顶灯：</div>
         <div style="display: inline-block;" class="switch demo1">
-            <input id="isWriteAll" type="checkbox" onclick="checkLog('isWriteAll')">
+            <input id="yeelight_id" type="checkbox" onclick="Yeelight('yeelight_id')">
+            <label></label>
+        </div>
+    </div>
+
+    <div style="margin-top: 10px">
+        <div style="display: inline-block;" class="div-left-first">插座增强版：</div>
+        <div style="display: inline-block;" class="switch demo1">
+            <input id="socket_plus_id" type="checkbox" onclick="SocketPlus()">
             <label></label>
         </div>
     </div>

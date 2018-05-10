@@ -61,12 +61,22 @@ public class RaspBerryApi {
         return MiLight(RaspberryConst.ENTITY.LIGHT_YEELIGHT, RaspberryConst.STATE.TURN_OFF);
     }
 
+    public static String YeelightState() {
+        //http://192.168.31.114:8123/api/states/light.yeelight
+        //{"entity_id": "light.yeelight"}
+        return RaspberryGetHttp(RaspberryConst.SERVICES.STATE+RaspberryConst.ENTITY.LIGHT_YEELIGHT);
+    }
+
     public static String YeelightTurnOn() {
         return MiLight(RaspberryConst.ENTITY.LIGHT_YEELIGHT, RaspberryConst.STATE.TURN_ON);
     }
 
     public static String MiSocketTurnOff() {
         return MiSwitch(RaspberryConst.ENTITY.MI_SOCKET, RaspberryConst.STATE.TURN_OFF);
+    }
+
+    public static String MiState(String id) {
+        return RaspberryGetHttp(RaspberryConst.SERVICES.STATE+id);
     }
 
     public static String mqttSent(String topic, String payload) {
@@ -108,6 +118,20 @@ public class RaspBerryApi {
         String body = "{\"entity_id\": \"" + entityId + "\"}";
         String path = RaspberryConst.SERVICES.SWITCH + param;
         return RaspberryHttp(path, body);
+    }
+
+    private static String RaspberryGetHttp(String path) {
+        String host = RaspberryConst.Pi.HOST + path;
+        try {
+            System.out.println("host:" + host);
+            String result = SimpleHttpUtils.get(host);
+            System.out.println(result);
+            return result;
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+        return null;
     }
 
     private static String RaspberryHttp(String path, String body) {

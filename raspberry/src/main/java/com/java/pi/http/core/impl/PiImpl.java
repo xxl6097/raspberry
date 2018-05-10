@@ -8,6 +8,7 @@ import java.util.Map;
 public class PiImpl extends com.java.pi.http.core.AbstractGetHttpFactory {
     final String PATH_MI_SOCKET_PLUS = "/v1/pi/switch";
     final String PATH_MI_LIGHT = "/v1/pi/light";
+    final String PATH_MI_LIGHT_STATE = "/v1/pi/state";
     final String PATH_MI_GATEWAY = "/v1/pi/gateway";
     final String PATH_MI_MQTT = "/v1/pi/mqtt";
 
@@ -19,16 +20,51 @@ public class PiImpl extends com.java.pi.http.core.AbstractGetHttpFactory {
             return result;
         if (param == null)
             return result;
-        if (path.startsWith(PATH_MI_SOCKET_PLUS)) {
+        if (path.equals(PATH_MI_SOCKET_PLUS)) {
             result = miSwitch(param);
-        }else if (path.startsWith(PATH_MI_MQTT)){
+        }else if (path.equals(PATH_MI_MQTT)){
             result = processMQTT(param);
-        }else if (path.startsWith(PATH_MI_LIGHT)){
+        }else if (path.equals(PATH_MI_LIGHT)){
             result = processLight(param);
-        }else if (path.startsWith(PATH_MI_GATEWAY)){
+        }else if (path.equals(PATH_MI_GATEWAY)){
             result = processGateWay(param);
+        }else if (path.equals(PATH_MI_LIGHT_STATE)){
+            Logc.e("### PATH_MI_LIGHT_STATE:"+path);
+            result = processState(param);
         }
+        Logc.e("### PiImpl:"+result);
         return result;
+    }
+
+    private String processState(Map<String, String> param) {
+        String result = "";
+        String callback = param.get("callback");
+        String entityid = param.get("entityid");
+        if (com.java.pi.http.util.Util.isEmpty(entityid)) {
+            result = "entityid is null";
+            String data = ";" + callback + "(" + result + ");";
+            return data;
+        }
+        result = RaspBerryApi.MiState(entityid);
+        Logc.e("### MiState:"+result);
+        String data = result;
+        if (!com.java.pi.http.util.Util.isEmpty(callback)){
+            data = ";" + callback + "(" + result + ");";
+        }
+        Logc.e(data);
+        return data;
+    }
+
+    private String processLightState(Map<String, String> param) {
+        String result = "";
+        String callback = param.get("callback");
+        result = RaspBerryApi.YeelightState();
+        String data = result;
+        if (!com.java.pi.http.util.Util.isEmpty(callback)){
+            data = ";" + callback + "(" + result + ");";
+        }
+        Logc.e(data);
+        return data;
     }
 
     private String processLight(Map<String, String> param) {

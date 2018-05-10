@@ -5,104 +5,100 @@ var tmpJson = {"data":{"logBean":{"writeAll":false,"writeDebug":false,"writeErro
 window.isLogin = false;
 $(document).ready(function() {
     isDebug = false;
-    firstload(); // first load
 });
 
 function load() {
     console.log("###load#页面已加载！");
-    loadingUI("页面已加载");
-    //getId("btnConnect").disabled = false;
-    window.isLogin = true;
-    if (window.isLogin) {
-        getConfig();
-    } else {
-        window.location.href = '../index.html'
-    }
+    getDeviceState();
 
 }
 
-function loadComplite(str) {
-    console.log("####fetchLogList " + str);
-    var config = JSON.parse(str); //由JSON字符串转换为JSON对象 webSocketServerInfo.data.appName;
-    webSocketServerInfo = config.data.serverInfo;
-    logInfo = config.data.logBean;
-    refreshLogButtn(logInfo);
-    document.getElementById('server').innerHTML = config.data.serverInfo.serverIp + ":" + config.data.serverInfo.port;
-    document.title = webSocketServerInfo.appName;
-    document.getElementById("btnConnect").click();
+
+
+
+function getDeviceState(){
+getState("light.yeelight",{
+                               onSuccess: function (msg) {
+                                   var ret = JSON.parse(results);
+                                   var yeelight = document.getElementById('yeelight_id');
+                                       if(ret.state == 'on'){
+                                       yeelight.checked = true;
+                                       }else{
+                                       yeelight.checked=false;
+                                       }
+                               },
+                               onFailure: function (err) {
+                                   console.log(JSON.stringify(err));
+                               }
+                           });
+
+
+getState("switch.mi_socket_plus",{
+                               onSuccess: function (msg) {
+                                   var ret = JSON.parse(results);
+                                               localLoad(ret);
+                                               var socketplus = document.getElementById('socket_plus_id');
+                                                   if(ret.state == 'on'){
+                                                   socketplus.checked = true;
+                                                   }else{
+                                                   socketplus.checked=false;
+                                                   }
+                               },
+                               onFailure: function (err) {
+                                   console.log(JSON.stringify(err));
+                               }
+                           });
 }
 
-function refreshLogButtn(logData) {
-    document.getElementById("isWriteAll").checked = logData.writeAll;
-    document.getElementById("isWriteInfo").checked = logData.writeInfo;
-    document.getElementById("isWriteDebug").checked = logData.writeDebug;
-    document.getElementById("isWriteError").checked = logData.writeError;
-    document.getElementById("isWriteVerbose").checked = logData.writeVerbose;
-    document.getElementById("isWriteWarm").checked= logData.writeWarm;
-}
-
-function localLoad() {
-    ipString = prompt("请输入手机IP地址", "192.168.");
-    var json = { "data": { "appName": "日志查看系统", "port": 8081, "serverIp": ipString }, "type": 1 }
-    var str = JSON.stringify(json);
-    loadComplite(str);
-}
-
-function firstload() {
-    if (!isDebug) {
-        console.log("####firstload ");
-        //getConfig();
-    } else {
-        //httpApi();
-    }
-}
-
-function getConfig() {
+function getState(entityid,suc,err) {
     var dt = new Date();
     var json = { "type": 1,"data": {"age ": dt.getFullYear() + "-" + (dt.getMonth() + 1) + "-" + dt.getDate() + "-" + dt.getTime()}};
     var str = JSON.stringify(json);
     console.log("####getConfig ");
-    loadingUI("请求参数中...");
     jQuery.ajax({
         //提交的网址
         type: "GET",
-        url: "/v1/pi/switch",
-        data: str,
+        url: "/v1/pi/state?entityid="+entityid,
+        contentType: "application/x-www-form-urlencoded",
+        dataType: 'text',
+        success: suc,
+        error: err
+    });
+}
+
+
+function getConfig1(entityid) {
+    var dt = new Date();
+    var json = { "type": 1,"data": {"age ": dt.getFullYear() + "-" + (dt.getMonth() + 1) + "-" + dt.getDate() + "-" + dt.getTime()}};
+    var str = JSON.stringify(json);
+    console.log("####getConfig ");
+    jQuery.ajax({
+        //提交的网址
+        type: "GET",
+        url: "/v1/pi/state?entityid="+entityid,
         contentType: "application/x-www-form-urlencoded",
         dataType: 'text',
         success: function(results) {
             console.log("####getConfig.results "+results);
-            //getId("btnConnect").disabled = true;
-            //webSocketServerInfo = JSON.parse(results); //由JSON字符串转换为JSON对象 webSocketServerInfo.data.appName;
-            //document.getElementById('server').innerHTML = webSocketServerInfo.data.serverIp + ":" + webSocketServerInfo.data.port;
-            //document.title = webSocketServerInfo.data.appName;
-            if (!results) {
-                localLoad();
-            } else {
-                loadComplite(results);
-            }
+            var ret = JSON.parse(results);
+            //localLoad(ret);
             return true;
         },
         error: function(e) {
-            loadingUI(e.response);
-            localLoad();
             //getId("btnConnect").disabled = false;
             return false;
         }
     });
 }
 
-function checkLog(id) {
-    var writeall = document.getElementById(id);
-    var isWriteAll = document.getElementById("isWriteAll").checked;
-    console.log(id + "====" + writeall.checked)
-    var logJson = { "type": 3,"data": {"writeAll": isWriteAll}};
-    var data = JSON.stringify(logJson);
+function Yeelight(id) {
+    var yeelight = document.getElementById(id);
+    var state = yeelight.checked;
+    console.log(id + "====" + state)
     jQuery.ajax({
         //提交的网址
         type: "GET",
-        url: "/v1/pi/switch",
-        data: data,
+        url: "/v1/pi/light?state="+(state?"on":"off"),
         contentType: "application/x-www-form-urlencoded",
         dataType: 'text',
         success: function(results) {
@@ -116,10 +112,27 @@ function checkLog(id) {
     });
 }
 
-function loadingUI(msg) {
-    document.getElementById('server').innerHTML = msg;
-}
 
+function SocketPlus() {
+    var socketplus = document.getElementById('socket_plus_id');
+    var state = socketplus.checked;
+    console.log(id + "====" + state)
+    jQuery.ajax({
+        //提交的网址
+        type: "GET",
+        url: "/v1/pi/switch?state="+(state?"on":"off"),
+        contentType: "application/x-www-form-urlencoded",
+        dataType: 'text',
+        success: function(results) {
+            console.log(id + "====" + results);
+            return true;
+        },
+        error: function(e) {
+            console.log(id + "====" + e);
+            return false;
+        }
+    });
+}
 
 function login() {
     var username = document.getElementById('username').value;

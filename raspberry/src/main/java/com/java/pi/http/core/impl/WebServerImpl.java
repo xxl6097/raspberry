@@ -16,7 +16,6 @@ public class WebServerImpl implements IHttpObserver<NanoHTTPD.IHTTPSession> {
     @Override
     public NanoHTTPD.Response onHttpSession(NanoHTTPD.IHTTPSession data) {
         String uri = data.getUri();
-        Logc.e("====WebServerImpl==== "+uri);
         return processFile(uri);
     }
 
@@ -27,7 +26,7 @@ public class WebServerImpl implements IHttpObserver<NanoHTTPD.IHTTPSession> {
             file_name = "index.html";
         }else{
             try {
-                file_name = file_name.replaceAll("/", "\\\\");
+                file_name = file_name.replaceAll("\\\\", "/");
             }catch (Exception e){}
         }
         String path = RaspberryConst.HTTP.FILE_PATH + file_name;
@@ -37,6 +36,8 @@ public class WebServerImpl implements IHttpObserver<NanoHTTPD.IHTTPSession> {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        Logc.e("====WebServerImpl==== "+path);
         if (data == null){
             return null;
         }
