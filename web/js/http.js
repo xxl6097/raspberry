@@ -1,9 +1,20 @@
 var isDebug;
 var webSocketServerInfo;
 var logInfo;
-var tmpJson = {"data":{"logBean":{"writeAll":false,"writeDebug":false,"writeError":false,"writeInfo":false,"writeVerbose":false,"writeWarm":false},"serverInfo":{"appName":"和而泰智能网关","port":8081,"serverIp":"192.168.31.96"}},"type":1};
+var tmpJson = {
+    "data": {
+        "logBean": {
+            "writeAll": false,
+            "writeDebug": false,
+            "writeError": false,
+            "writeInfo": false,
+            "writeVerbose": false,
+            "writeWarm": false
+        }, "serverInfo": {"appName": "和而泰智能网关", "port": 8081, "serverIp": "192.168.31.96"}
+    }, "type": 1
+};
 window.isLogin = false;
-$(document).ready(function() {
+$(document).ready(function () {
     isDebug = false;
 });
 
@@ -14,51 +25,52 @@ function load() {
 }
 
 
+function getDeviceState() {
+    getState("light.yeelight", {
+        onSuccess: function (msg) {
+            var ret = JSON.parse(results);
+            var yeelight = document.getElementById('yeelight_id');
+            if (ret.state == 'on') {
+                yeelight.checked = true;
+            } else {
+                yeelight.checked = false;
+            }
+        },
+        onFailure: function (err) {
+            console.log(JSON.stringify(err));
+        }
+    });
 
 
-function getDeviceState(){
-getState("light.yeelight",{
-                               onSuccess: function (msg) {
-                                   var ret = JSON.parse(results);
-                                   var yeelight = document.getElementById('yeelight_id');
-                                       if(ret.state == 'on'){
-                                       yeelight.checked = true;
-                                       }else{
-                                       yeelight.checked=false;
-                                       }
-                               },
-                               onFailure: function (err) {
-                                   console.log(JSON.stringify(err));
-                               }
-                           });
-
-
-getState("switch.mi_socket_plus",{
-                               onSuccess: function (msg) {
-                                   var ret = JSON.parse(results);
-                                               localLoad(ret);
-                                               var socketplus = document.getElementById('socket_plus_id');
-                                                   if(ret.state == 'on'){
-                                                   socketplus.checked = true;
-                                                   }else{
-                                                   socketplus.checked=false;
-                                                   }
-                               },
-                               onFailure: function (err) {
-                                   console.log(JSON.stringify(err));
-                               }
-                           });
+    getState("switch.mi_socket_plus", {
+        onSuccess: function (msg) {
+            var ret = JSON.parse(results);
+            localLoad(ret);
+            var socketplus = document.getElementById('socket_plus_id');
+            if (ret.state == 'on') {
+                socketplus.checked = true;
+            } else {
+                socketplus.checked = false;
+            }
+        },
+        onFailure: function (err) {
+            console.log(JSON.stringify(err));
+        }
+    });
 }
 
-function getState(entityid,suc,err) {
+function getState(entityid, suc, err) {
     var dt = new Date();
-    var json = { "type": 1,"data": {"age ": dt.getFullYear() + "-" + (dt.getMonth() + 1) + "-" + dt.getDate() + "-" + dt.getTime()}};
+    var json = {
+        "type": 1,
+        "data": {"age ": dt.getFullYear() + "-" + (dt.getMonth() + 1) + "-" + dt.getDate() + "-" + dt.getTime()}
+    };
     var str = JSON.stringify(json);
     console.log("####getConfig ");
     jQuery.ajax({
         //提交的网址
         type: "GET",
-        url: "/v1/pi/state?entityid="+entityid,
+        url: "/v1/pi/state?entityid=" + entityid,
         contentType: "application/x-www-form-urlencoded",
         dataType: 'text',
         success: suc,
@@ -69,22 +81,25 @@ function getState(entityid,suc,err) {
 
 function getConfig1(entityid) {
     var dt = new Date();
-    var json = { "type": 1,"data": {"age ": dt.getFullYear() + "-" + (dt.getMonth() + 1) + "-" + dt.getDate() + "-" + dt.getTime()}};
+    var json = {
+        "type": 1,
+        "data": {"age ": dt.getFullYear() + "-" + (dt.getMonth() + 1) + "-" + dt.getDate() + "-" + dt.getTime()}
+    };
     var str = JSON.stringify(json);
     console.log("####getConfig ");
     jQuery.ajax({
         //提交的网址
         type: "GET",
-        url: "/v1/pi/state?entityid="+entityid,
+        url: "/v1/pi/state?entityid=" + entityid,
         contentType: "application/x-www-form-urlencoded",
         dataType: 'text',
-        success: function(results) {
-            console.log("####getConfig.results "+results);
+        success: function (results) {
+            console.log("####getConfig.results " + results);
             var ret = JSON.parse(results);
             //localLoad(ret);
             return true;
         },
-        error: function(e) {
+        error: function (e) {
             //getId("btnConnect").disabled = false;
             return false;
         }
@@ -98,14 +113,14 @@ function Yeelight(id) {
     jQuery.ajax({
         //提交的网址
         type: "GET",
-        url: "/v1/pi/light?state="+(state?"on":"off"),
+        url: "/v1/pi/light?state=" + (state ? "on" : "off"),
         contentType: "application/x-www-form-urlencoded",
         dataType: 'text',
-        success: function(results) {
+        success: function (results) {
             console.log(id + "====" + results);
             return true;
         },
-        error: function(e) {
+        error: function (e) {
             console.log(id + "====" + e);
             return false;
         }
@@ -120,14 +135,14 @@ function SocketPlus() {
     jQuery.ajax({
         //提交的网址
         type: "GET",
-        url: "/v1/pi/switch?state="+(state?"on":"off"),
+        url: "/v1/pi/switch?state=" + (state ? "on" : "off"),
         contentType: "application/x-www-form-urlencoded",
         dataType: 'text',
-        success: function(results) {
+        success: function (results) {
             console.log(id + "====" + results);
             return true;
         },
-        error: function(e) {
+        error: function (e) {
             console.log(id + "====" + e);
             return false;
         }
@@ -138,7 +153,7 @@ function login() {
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
     console.log("####login username:" + username + " password:" + password);
-    var json = { "type": 2, "data": { "username": username, "password": password } };
+    var json = {"type": 2, "data": {"username": username, "password": password}};
     var value = JSON.stringify(json);
     jQuery.ajax({
         //提交的网址
@@ -147,7 +162,7 @@ function login() {
         data: value,
         contentType: "application/x-www-form-urlencoded",
         dataType: 'text',
-        success: function(results) {
+        success: function (results) {
             console.log("####login " + results);
             var ret = JSON.parse(results);
             Toast(ret.data, 3000);
@@ -164,7 +179,7 @@ function login() {
 function handLogResults(results) {
     $("#db-data-div").empty();
     console.log("#### handLogResults " + results);
-    results.forEach(function(item) {
+    results.forEach(function (item) {
         handItem(item);
     })
 
@@ -201,11 +216,13 @@ function Toast(msg, duration) {
     m.innerHTML = msg;
     m.style.cssText = "width: 60%;min-width: 150px;opacity: 0.7;height: 60px;color: rgb(255, 255, 255);line-height: 30px;text-align: center;border-radius: 5px;position: fixed;top: 40%;left: 20%;z-index: 999999;background: rgb(0, 0, 0);font-size: 12px;";
     document.body.appendChild(m);
-    setTimeout(function() {
+    setTimeout(function () {
         var d = 0.5;
         m.style.webkitTransition = '-webkit-transform ' + d + 's ease-in, opacity ' + d + 's ease-in';
         m.style.opacity = '0';
-        setTimeout(function() { document.body.removeChild(m) }, d * 1000);
+        setTimeout(function () {
+            document.body.removeChild(m)
+        }, d * 1000);
     }, duration);
 }
 
@@ -225,4 +242,6 @@ function IsPC() {
     return flag;
 }
 
-function getId(id) { return document.getElementById(id); }
+function getId(id) {
+    return document.getElementById(id);
+}
