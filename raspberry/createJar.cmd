@@ -1,3 +1,3 @@
 @echo off
-gradle build
+gradle makeJar
 pause

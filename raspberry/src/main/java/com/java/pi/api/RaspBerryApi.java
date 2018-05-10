@@ -1,8 +1,8 @@
 package com.java.pi.api;
 
 import com.java.pi.bean.RaspPiBean;
-import com.java.pi.httpserver.http.SimpleHttpUtils;
-import com.java.pi.httpserver.util.GsonUtil;
+import com.java.pi.http.http.SimpleHttpUtils;
+import com.java.pi.http.util.GsonUtil;
 import com.java.pi.util.RaspberryConst;
 
 public class RaspBerryApi {

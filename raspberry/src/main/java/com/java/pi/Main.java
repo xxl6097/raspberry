@@ -1,7 +1,7 @@
 package com.java.pi;
 
-import com.java.pi.api.MiSocketPlus;
-import com.java.pi.httpserver.Server;
+import com.java.pi.http.Server;
+import com.java.pi.util.RaspberryConst;
 import com.java.pi.wifi.LanDiscover;
 
 import java.io.IOException;
@@ -9,9 +9,10 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-//        startServer(args);
+        System.out.println(RaspberryConst.HTTP.FILE_PATH);
+        startServer(args);
 //        scanLan();
-        MiSocketPlus.keepMiSocketPlusOn(3);
+//        MiSocketPlus.keepMiSocketPlusOn(3);
     }
 
 

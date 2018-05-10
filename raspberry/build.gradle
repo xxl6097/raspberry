@@ -16,6 +16,14 @@ jar {
     }
 }
 
+task makeJar(type:Copy,dependsOn:build) {
+    delete 'raspberry.jar'
+    from('build/libs/')
+    into('/')
+    include('raspberry.jar')
+    rename('raspberry.jar', 'raspberry.jar')
+}
+
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
 }

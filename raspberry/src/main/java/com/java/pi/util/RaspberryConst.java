@@ -1,5 +1,7 @@
 package com.java.pi.util;
 
+import java.io.File;
+
 public class RaspberryConst {
     public final static class Pi{
         public final static String HOST = "http://192.168.31.114:8123";
@@ -30,5 +32,10 @@ public class RaspberryConst {
         public final static String TURN_OFF = "turn_off";
         public final static String PLAY_RINGTONE = "play_ringtone";
         public final static String STOP_RINGTONE = "stop_ringtone";
+    }
+
+    public final static class HTTP{
+        public final static String FILE_PATH = System.getProperty("user.dir") + File.separator
+                + "web" + File.separator;
     }
 }
