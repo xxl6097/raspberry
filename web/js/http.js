@@ -26,9 +26,9 @@ function load() {
 
 
 function getDeviceState() {
-    getState("light.yeelight", {
-        onSuccess: function (msg) {
-            var ret = JSON.parse(results);
+    getState("light.yeelight",
+        function (msg) {
+            var ret = JSON.parse(msg);
             var yeelight = document.getElementById('yeelight_id');
             if (ret.state == 'on') {
                 yeelight.checked = true;
@@ -36,37 +36,53 @@ function getDeviceState() {
                 yeelight.checked = false;
             }
         },
-        onFailure: function (err) {
+        function (err) {
             console.log(JSON.stringify(err));
         }
-    });
+    );
 
 
-    getState("switch.mi_socket_plus", {
-        onSuccess: function (msg) {
-            var ret = JSON.parse(results);
-            localLoad(ret);
+    getState("switch.mi_socket_plus", function (msg) {
+            var ret = JSON.parse(msg);
             var socketplus = document.getElementById('socket_plus_id');
             if (ret.state == 'on') {
                 socketplus.checked = true;
-            } else {
+            } else if(ret.state == 'off'){
                 socketplus.checked = false;
+            }else{
+            restartHomeassistant();
             }
         },
-        onFailure: function (err) {
+         function (err) {
             console.log(JSON.stringify(err));
+        }
+    );
+}
+
+
+function restartHomeassistant() {
+    var path = "?entityid=homeassistant&state=restart";
+    jQuery.ajax({
+        //提交的网址
+        type: "GET",
+        url: "/v1/pi/switch" + path,
+        contentType: "application/x-www-form-urlencoded",
+        dataType: 'text',
+        success: function (results) {
+            console.log("####getConfig.results " + results);
+            var ret = JSON.parse(results);
+            //localLoad(ret);
+            alert("HomeAssistant is restart");
+            return true;
+        },
+        error: function (e) {
+            //getId("btnConnect").disabled = false;
+            return false;
         }
     });
 }
 
 function getState(entityid, suc, err) {
-    var dt = new Date();
-    var json = {
-        "type": 1,
-        "data": {"age ": dt.getFullYear() + "-" + (dt.getMonth() + 1) + "-" + dt.getDate() + "-" + dt.getTime()}
-    };
-    var str = JSON.stringify(json);
-    console.log("####getConfig ");
     jQuery.ajax({
         //提交的网址
         type: "GET",
