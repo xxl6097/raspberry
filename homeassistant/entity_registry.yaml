@@ -31,5 +31,3 @@ switch.mi_socket_plus_usb:
   platform: xiaomi_miio
   unique_id: chuangmi.plug.v3-78:11:DC:53:74:39-usb
 
-light.yeelight_ceiling_34ce00be19cc:
-
