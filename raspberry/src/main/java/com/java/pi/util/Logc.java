@@ -181,6 +181,10 @@ public class Logc {
     public static int getLineNumber() {
         try {
             int len = Thread.currentThread().getStackTrace().length;
+            String tar = Thread.currentThread().getStackTrace()[len].getClassName();
+            if (tar.equals(Thread.class.getName())){
+                len --;
+            }
             return Thread.currentThread().getStackTrace()[len-1].getLineNumber();
         }catch (Exception e){
 
@@ -192,6 +196,10 @@ public class Logc {
     public static String getFileName() {
         try {
             int len = Thread.currentThread().getStackTrace().length;
+            String tar = Thread.currentThread().getStackTrace()[len].getClassName();
+            if (tar.equals(Thread.class.getName())){
+                len --;
+            }
             return Thread.currentThread().getStackTrace()[len-1].getFileName();
         }catch (Exception e){
 

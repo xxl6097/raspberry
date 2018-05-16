@@ -64,14 +64,14 @@ public class MiSocketPlusManager {
                                 if (!Util.isEmpty(result)) {
                                     if (result.equals("[]")) {
                                         result = RaspBerryApi.HomeAssistantRestart();
-                                        Logc.i("HomeAssistantRestart:" + result);
+                                        Logc.i("HomeAssistantRestart.response:" + result);
                                     }
                                 } else {
                                 }
                             } else if (state == MIState.ON) {
                             } else if (state == MIState.UNAVAILABLE){
                                 result = RaspBerryApi.HomeAssistantRestart();
-                                Logc.i("HomeAssistantRestart:" + result);
+                                Logc.i("HomeAssistantRestart.response:" + result);
                             }
                             lock.wait(time * 1000);
                         } catch (InterruptedException e) {
@@ -82,6 +82,7 @@ public class MiSocketPlusManager {
                 }
             }
         });
+        miSocketStateThread.setName("keepMiSocketPlusHangon");
         miSocketStateThread.start();
     }
 
