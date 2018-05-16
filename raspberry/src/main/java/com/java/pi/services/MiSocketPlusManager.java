@@ -30,10 +30,10 @@ public class MiSocketPlusManager {
     }
 
     public boolean isAlive() {
-        Logc.e("==isAlive "+miSocketStateThread);
+        Logc.e("==isAlive " + miSocketStateThread);
         if (miSocketStateThread == null)
             return false;
-        Logc.e("==isAlive.running "+running);
+        Logc.e("==isAlive.running " + running);
         if (running)
             return true;
         return false;
@@ -48,11 +48,12 @@ public class MiSocketPlusManager {
         miSocketStateThread = new Thread(new Runnable() {
             @Override
             public void run() {
-                try {
-                    synchronized (this) {
-                        String result = "";
-                        while (running) {
+                synchronized (this) {
+                    String result = "";
+                    while (running) {
+                        try {
                             if (!pause) {
+                                Logc.e("keepMiSocketPlusHangon is hang on...");
                                 lock.wait();
                             }
                             MIState state = MiSocketPlus.getSocketPlusState();
@@ -68,15 +69,15 @@ public class MiSocketPlusManager {
                                 } else {
                                 }
                             } else if (state == MIState.ON) {
-                            } else {
+                            } else if (state == MIState.UNAVAILABLE){
                                 result = RaspBerryApi.HomeAssistantRestart();
                                 Logc.i("HomeAssistantRestart:" + result);
                             }
                             lock.wait(time * 1000);
+                        } catch (InterruptedException e) {
+                            //e.printStackTrace();
                         }
                     }
-                } catch (InterruptedException e) {
-                    //e.printStackTrace();
                 }
             }
         });
