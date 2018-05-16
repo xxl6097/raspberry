@@ -1,0 +1,88 @@
+
+chuangmiirv2_miio49397173:
+  hide_if_away: false
+  icon:
+  mac: 28:6C:07:22:81:A0
+  name: chuangmi-ir-v2 miio49397173
+  picture:
+  track: true
+
+zimipowerstripv2_miio62766097:
+  hide_if_away: false
+  icon:
+  mac: 34:CE:00:FC:CD:69
+  name: zimi-powerstrip-v2 miio62766097
+  picture:
+  track: true
+
+lumigatewayv3_miio55587006:
+  hide_if_away: false
+  icon:
+  mac: 28:6C:07:FA:31:4F
+  name: lumi-gateway-v3 miio55587006
+  picture:
+  track: true
+
+raspberrypi:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:FE:D9:7B
+  name: raspberrypi
+  picture:
+  track: true
+
+unknown:
+  hide_if_away: false
+  icon:
+  mac: 34:CE:00:BE:19:CC
+  name: Unknown
+  picture:
+  track: true
+
+uuxiasmacpro:
+  hide_if_away: false
+  icon:
+  mac: 60:F8:1D:A9:99:3C
+  name: uuxias-Mac-Pro
+  picture:
+  track: true
+
+dca904c6f566:
+  hide_if_away: false
+  icon:
+  mac: DC:A9:04:C6:F5:66
+  name: dca904c6f566
+  picture:
+  track: true
+
+38a4edb8849d:
+  hide_if_away: false
+  icon:
+  mac: 38:A4:ED:B8:84:9D
+  name: 38a4edb8849d
+  picture:
+  track: true
+
+805e4f17d6cc:
+  hide_if_away: false
+  icon:
+  mac: 80:5E:4F:17:D6:CC
+  name: 805e4f17d6cc
+  picture:
+  track: true
+
+7811dc537439:
+  hide_if_away: false
+  icon:
+  mac: 78:11:DC:53:74:39
+  name: 智能插座
+  picture:
+  track: true
+
+240a640883f3:
+  hide_if_away: false
+  icon:
+  mac: 24:0A:64:08:83:F3
+  name: 240a640883f3
+  picture:
+  track: true

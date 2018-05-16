@@ -1,0 +1,41 @@
+# # 组配置的示例
+# # groups.yaml文件（在configuration.yaml中，配置“group: !include groups.yaml”）
+# outside_weather:
+#   # 组的friendly_name
+#   name: 室外环境
+#   # 组内包含的实体
+#   entities: sun.sun, sensor.hachina_temperature, sensor.hachina_humidity, sensor.hachina_pm25, sensor.weather_temperature, sensor.weather_humidity, sensor.weather_precipitation, sensor.weather_pressure, sensor.weather_wind_speed
+ 
+# environment_in_office: sensor.temperature_158d0001a1f8f1, sensor.humidity_158d0001a1f8f1, sensor.illumination_34ce0091d350, sensor.pressure_158d0001a1f8f1, binary_sensor.door_window_sensor_158d0001aac1b4, binary_sensor.water_leak_sensor_158d0001bc185d
+ 
+# environment_in_plant:
+#   name: 花盆环境
+#   entities:
+#     - sensor.office_flower_moisture
+#     - sensor.office_flower_temperature
+#     - sensor.office_flower_light_intensity
+#     - sensor.office_flower_conductivity
+#     - sensor.office_flower_battery
+ 
+# coin_market:
+#   name: 电子货币
+#   entities: sensor.bitcoin, sensor.exchange_rate_1_btc, sensor.ethereum, sensor.ripple
+ 
+# tab_plant:
+#   # 增加此组的页签
+#   view: yes
+#   name: 花盆环境
+#   icon: mdi:flower
+#   entities: group.environment_in_plant
+ 
+# tab_outside:
+#   view: yes
+#   name: 室外环境
+#   icon: mdi:image-filter-hdr
+#   entities: camera.camera1, group.outside_weather
+ 
+# tab_coinmarket:
+#   view: yes
+#   name: 电子货币
+#   icon: mdi:currency-btc
+#   entities: group.coin_market

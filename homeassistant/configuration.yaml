@@ -1,0 +1,170 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: uuxia
+  # Location required to calculate the time the sun rises and sets 113.973847,22.548615
+  latitude: 22.548615
+  longitude: 113.973847
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 0
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Asia/Shanghai
+  # Customization file
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+introduction:
+# Enables the frontend
+frontend:
+# Enables configuration UI
+config:
+# api:
+# Example configuration.yaml entry
+websocket_api:
+http:
+  api_password: !secret http_password
+  cors_allowed_origins:
+    - https://google.com
+    - https://www.home-assistant.io
+  ip_ban_enabled: True
+  login_attempts_threshold: 3
+  trusted_networks:
+    - 127.0.0.1
+    - 192.168.31.231
+    - 192.168.31.114
+    - ::1
+    - 192.168.1.0/24
+    - 2001:DB8:ABCD::/48
+  # Secrets are defined in the file secrets.yaml
+  # api_password: !secret http_password
+  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+  # base_url: example.duckdns.org:8123
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+shopping_list:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+weather:
+  - platform: yweather
+    woeid: 2161853
+    name: shenzhen
+# Weather prediction
+sensor:
+  - platform: yr
+  - platform: moon
+  - platform: template
+    sensors:
+      moon_phase:
+        value_template: '{% if is_state("sensor.moon", "New moon") %}新月{% elif is_state("sensor.moon", "Waxing crescent") %}娥眉月{% elif is_state("sensor.moon", "First quarter") %}上弦月{% elif is_state("sensor.moon", "Waxing gibbous") %}盈凸月{% elif is_state("sensor.moon", "Full moon") %}满月{% elif is_state("sensor.moon", "Waning gibbous") %}亏凸月{% elif is_state("sensor.moon", "Last quarter") %}下弦月{% else %}残月{% endif %}'
+        friendly_name: '月相'
+      sunrise:
+        value_template: '{{ ((as_timestamp(states.sun.sun.attributes.next_rising)) | timestamp_local) [11:16] }}'
+        friendly_name: '日出时间'
+
+# Text to speech
+tts:
+  - platform: baidu
+    app_id: 3397643
+    api_key: cCGLUn8w44yCoE5suGp81lg3
+    secret_key: 9CGA1p7m7fCcEHH6O6oO3XrcwgrlYiRb
+    speed: 4
+    pitch: 4
+    volume: 10
+    person: 0
+
+# Cloud
+cloud:
+
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+
+switch:
+  - platform: xiaomi_miio
+    name: 小米插座增强版
+    host: 192.168.31.20
+    token: 204266477f56270ae401a49e07a2210f
+  - platform: xiaomi_miio
+    name: 小米插线板
+    host: 192.168.31.218
+    token: eaff521733b28dc7f3050203bd4b9a73
+  - platform: wake_on_lan
+    name: 唤醒我的Mac
+    # mac_address: "60:f8:1d:a9:99:3c"
+    mac_address: "60-f8-1d-a9-99-3c"
+
+
+light:
+  - platform: yeelight
+    devices:
+      192.168.31.169:
+        name: Yeelight吸顶灯
+        transition: 1000
+
+# 小米网关You can leave MAC empty if you only have one gateway.
+xiaomi_aqara:
+  discovery_retry: 5
+  gateways:
+    - key: 8upx7tm5ieg5lg60
+#小米路由器
+device_tracker:
+  - platform: xiaomi
+    name: 小米路由器cent
+    host: 192.168.31.1
+    password: het123456
+
+
+
+
+# MQTT代理配置
+mqtt:
+  # MQTT Broker的IP地址或者域名
+  broker: uuxia.cn
+  # MQTT Broker的端口号，缺省为1883
+  port: 1883
+  # 用户名
+  username: admin
+  # 密码
+  password: public
+ 
+  ##以下的配置不常用，如果需要使用，可以删除前面的注释#
+  ##连接MQTT代理服务器使用的Client ID。不同的客户端应该具有不同的client_id。如果不填，会是一个随机数。
+  client_id: uuxia's smart home
+  ##发送保持连接包的间隔时间（秒），缺省为60秒
+  keepalive: 60
+  ##使用MQTT协议版本，缺省情况下使用3.1.1，如果服务器端不支持，会回退到3.1
+  #protocol: 3.1.1
+  
+  ##以下几个配置用于与代理服务器之间建立加密通讯
+  ##证书文件
+  #certificate: /home/user/.homeassistant/server.crt
+  ##是否检测服务器名称与证书文件的一致性
+  #tls_insecure: False
+  ##TLS/SSL协议的版本号，可以是auto、1.0、1.1或1.2，缺省为auto
+  #tls_version: auto

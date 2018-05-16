@@ -1,0 +1,32 @@
+sensor.illumination_286c07fa314f:
+  name:
+  platform: xiaomi_aqara
+  unique_id: illumination286c07fa314f
+light.gateway_light_286c07fa314f:
+  name:
+  platform: xiaomi_aqara
+  unique_id: rgb286c07fa314f
+binary_sensor.door_window_sensor_158d0001f39bb1:
+  name: 米家门窗传感器
+  platform: xiaomi_aqara
+  unique_id: status158d0001f39bb1
+binary_sensor.motion_sensor_158d0001e7a8d2:
+  name: 米家人体传感器
+  platform: xiaomi_aqara
+  unique_id: status158d0001e7a8d2
+switch.original_xiaomi_mi_smart_wifi_socket:
+  name:
+  platform: xiaomi_miio
+  unique_id: zimi.powerstrip.v2-34:CE:00:FC:CD:69
+remote.:
+  name:
+  platform: xiaomi_miio
+  unique_id: chuangmi.ir.v2-28:6C:07:22:81:A0
+switch.mi_socket_plus:
+  name:
+  platform: xiaomi_miio
+  unique_id: chuangmi.plug.v3-78:11:DC:53:74:39
+switch.mi_socket_plus_usb:
+  name:
+  platform: xiaomi_miio
+  unique_id: chuangmi.plug.v3-78:11:DC:53:74:39-usb
