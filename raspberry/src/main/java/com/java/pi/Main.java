@@ -13,7 +13,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println(RaspberryConst.HTTP.FILE_PATH);
         startServer(args);
-        //每60s检测一次MiSocketPlus状态，如果关闭了，则开启
+        //每30s检测一次MiSocketPlus状态，如果关闭了，则开启
         MiSocketPlusManager.getInstance().keepMiSocketPlusHangon(30);
     }
 
