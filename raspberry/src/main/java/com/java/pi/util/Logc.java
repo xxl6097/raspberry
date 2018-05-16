@@ -54,7 +54,6 @@ public class Logc {
     }
 
     private static String hang(){
-        getCallerStackTraceElement();
         return  "["+getFileName()+":"+ getLineNumber()+"]";
     }
     private static String getCurrentTime() {
@@ -181,7 +180,8 @@ public class Logc {
 
     public static int getLineNumber() {
         try {
-            return Thread.currentThread().getStackTrace()[5].getLineNumber();
+            int len = Thread.currentThread().getStackTrace().length;
+            return Thread.currentThread().getStackTrace()[len-1].getLineNumber();
         }catch (Exception e){
 
         }
@@ -191,7 +191,8 @@ public class Logc {
 
     public static String getFileName() {
         try {
-            return Thread.currentThread().getStackTrace()[5].getFileName();
+            int len = Thread.currentThread().getStackTrace().length;
+            return Thread.currentThread().getStackTrace()[len-1].getFileName();
         }catch (Exception e){
 
         }
