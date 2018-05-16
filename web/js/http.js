@@ -40,8 +40,8 @@ function tips(msg) {
 }
 
 function getDeviceState() {
-    getState("light.yeelight",
-        function (msg) {
+    var path = "/v1/pi/state?entityid=light.yeelight";
+    doget(path, function (msg) {
             var ret = JSON.parse(msg);
             var yeelight = document.getElementById('yeelight_id');
             if (ret.state == 'on') {
@@ -56,7 +56,8 @@ function getDeviceState() {
     );
 
 
-    getState("switch.mi_socket_plus", function (msg) {
+    var path = "/v1/pi/state?entityid=switch.mi_socket_plus";
+    doget(path, function (msg) {
             var ret = JSON.parse(msg);
             var socketplus = document.getElementById('socket_plus_id');
             if (ret.state == 'on') {
@@ -75,7 +76,7 @@ function getDeviceState() {
 
     var path = "/v1/dev/state?entityid=timer";
     doget(path, function (ret) {
-        var timeId = getId('socket_plus_listen_id');
+        var timeId = document.getElementById('timer_id');
         if (ret.code == 0) {
             timeId.checked = true;
         } else {
@@ -135,7 +136,7 @@ function SocketPlus() {
 }
 
 function TimerListen() {
-    var timeId = getId('socket_plus_listen_id');
+    var timeId = document.getElementById('timer_id');
     var state = timeId.checked;
     var path = "/v1/pi/timer?state=" + (state ? "on" : "off");
     doget(path, function (result) {
