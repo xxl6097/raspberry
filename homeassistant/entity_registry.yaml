@@ -3,7 +3,7 @@ sensor.illumination_286c07fa314f:
   platform: xiaomi_aqara
   unique_id: illumination286c07fa314f
 light.gateway_light_286c07fa314f:
-  name: 米家门磁传感器
+  name: 小米网关灯
   platform: xiaomi_aqara
   unique_id: rgb286c07fa314f
 binary_sensor.door_window_sensor_158d0001f39bb1:
@@ -30,3 +30,6 @@ switch.mi_socket_plus_usb:
   name: 米家插座增强版USB
   platform: xiaomi_miio
   unique_id: chuangmi.plug.v3-78:11:DC:53:74:39-usb
+
+light.yeelight_ceiling_34ce00be19cc:
+
