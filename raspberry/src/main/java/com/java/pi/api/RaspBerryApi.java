@@ -3,6 +3,7 @@ package com.java.pi.api;
 import com.java.pi.bean.RaspPiBean;
 import com.java.pi.http.http.SimpleHttpUtils;
 import com.java.pi.http.util.GsonUtil;
+import com.java.pi.util.Logc;
 import com.java.pi.util.RaspberryConst;
 
 public class RaspBerryApi {
@@ -129,7 +130,7 @@ public class RaspBerryApi {
             return result;
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println(e.getMessage());
+            Logc.e("RaspberryGetHttp:"+(e==null?"":e.getMessage()));
         }
         return null;
     }
@@ -143,8 +144,7 @@ public class RaspBerryApi {
             System.out.println(result);
             return result;
         } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println(e.getMessage());
+            Logc.e("RaspberryHttp:"+(e==null?"":e.getMessage()));
         }
         return null;
     }
@@ -159,8 +159,8 @@ public class RaspBerryApi {
             System.out.println(result);
             return raspPiBean;
         } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println(e.getMessage());
+//            e.printStackTrace();
+            Logc.e("getDeviceState:"+(e==null?"":e.getMessage()));
         }
         return null;
 
