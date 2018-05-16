@@ -33,7 +33,7 @@ public class Test {
     }
 
     private static void fuck(){
-        Logc.e("fuck you");
+        Logc.e("fuck you"+Thread.class.getName());
     }
 
 }
