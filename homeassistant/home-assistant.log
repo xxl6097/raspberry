@@ -1,0 +1,2407 @@
+2018-05-16 06:13:19 ERROR (MainThread) [homeassistant.setup] Error during setup of component automation
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/setup.py", line 142, in _async_setup_component
+    result = await component.async_setup(hass, processed_config)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/automation/__init__.py", line 165, in async_setup
+    yield from _async_process_config(hass, config, component)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/automation/__init__.py", line 412, in _async_process_config
+    yield from component.async_add_entities(entities)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 174, in _async_load
+    unique_id=info['unique_id'],
+TypeError: 'NoneType' object is not subscriptable
+2018-05-16 06:13:21 ERROR (MainThread) [homeassistant.core] Error executing service <ServiceCall group.set: visible=False, entities=['device_tracker.805e4f17d6cc', 'device_tracker.7811dc537439', 'device_tracker.raspberrypi', 'device_tracker.240a640883f3', 'device_tracker.zimipowerstripv2_miio62766097', 'device_tracker.uuxiasmacpro', 'device_tracker.38a4edb8849d', 'device_tracker.unknown', 'device_tracker.dca904c6f566', 'device_tracker.chuangmiirv2_miio49397173', 'device_tracker.lumigatewayv3_miio55587006'], name=all devices, object_id=all_devices>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/core.py", line 1002, in _event_to_service_call
+    await service_handler.func(service_call)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/group/__init__.py", line 295, in groups_service_handler
+    **extra_arg
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/group/__init__.py", line 456, in async_create_group
+    yield from component.async_add_entities([group], True)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/setup.py", line 142, in _async_setup_component
+    result = await component.async_setup(hass, processed_config)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/automation/__init__.py", line 165, in async_setup
+    yield from _async_process_config(hass, config, component)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/automation/__init__.py", line 412, in _async_process_config
+    yield from component.async_add_entities(entities)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 174, in _async_load
+    unique_id=info['unique_id'],
+TypeError: 'NoneType' object is not subscriptable
+2018-05-16 06:13:31 WARNING (MainThread) [homeassistant.components.sensor] Setup of platform yr is taking over 10 seconds.
+2018-05-16 06:13:31 ERROR (MainThread) [homeassistant.components.sensor.yr] Retrying in 15 minutes: 
+2018-05-16 06:13:31 ERROR (MainThread) [homeassistant.core] Error doing job: Task exception was never retrieved
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/core.py", line 1002, in _event_to_service_call
+    await service_handler.func(service_call)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/group/__init__.py", line 295, in groups_service_handler
+    **extra_arg
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/group/__init__.py", line 456, in async_create_group
+    yield from component.async_add_entities([group], True)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/setup.py", line 142, in _async_setup_component
+    result = await component.async_setup(hass, processed_config)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/automation/__init__.py", line 165, in async_setup
+    yield from _async_process_config(hass, config, component)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/automation/__init__.py", line 412, in _async_process_config
+    yield from component.async_add_entities(entities)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 174, in _async_load
+    unique_id=info['unique_id'],
+TypeError: 'NoneType' object is not subscriptable
+2018-05-16 06:13:31 ERROR (MainThread) [homeassistant.core] Error doing job: Task exception was never retrieved
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/core.py", line 1002, in _event_to_service_call
+    await service_handler.func(service_call)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/group/__init__.py", line 295, in groups_service_handler
+    **extra_arg
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/group/__init__.py", line 456, in async_create_group
+    yield from component.async_add_entities([group], True)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/setup.py", line 142, in _async_setup_component
+    result = await component.async_setup(hass, processed_config)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/automation/__init__.py", line 165, in async_setup
+    yield from _async_process_config(hass, config, component)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/automation/__init__.py", line 412, in _async_process_config
+    yield from component.async_add_entities(entities)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 174, in _async_load
+    unique_id=info['unique_id'],
+TypeError: 'NoneType' object is not subscriptable
+2018-05-16 06:13:31 ERROR (MainThread) [homeassistant.core] Error doing job: Task exception was never retrieved
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/core.py", line 1002, in _event_to_service_call
+    await service_handler.func(service_call)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/group/__init__.py", line 295, in groups_service_handler
+    **extra_arg
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/group/__init__.py", line 456, in async_create_group
+    yield from component.async_add_entities([group], True)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/setup.py", line 142, in _async_setup_component
+    result = await component.async_setup(hass, processed_config)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/automation/__init__.py", line 165, in async_setup
+    yield from _async_process_config(hass, config, component)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/automation/__init__.py", line 412, in _async_process_config
+    yield from component.async_add_entities(entities)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 174, in _async_load
+    unique_id=info['unique_id'],
+TypeError: 'NoneType' object is not subscriptable
+2018-05-16 06:13:31 ERROR (MainThread) [homeassistant.core] Error doing job: Task exception was never retrieved
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/core.py", line 1002, in _event_to_service_call
+    await service_handler.func(service_call)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/group/__init__.py", line 295, in groups_service_handler
+    **extra_arg
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/group/__init__.py", line 456, in async_create_group
+    yield from component.async_add_entities([group], True)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/setup.py", line 142, in _async_setup_component
+    result = await component.async_setup(hass, processed_config)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/automation/__init__.py", line 165, in async_setup
+    yield from _async_process_config(hass, config, component)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/automation/__init__.py", line 412, in _async_process_config
+    yield from component.async_add_entities(entities)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 174, in _async_load
+    unique_id=info['unique_id'],
+TypeError: 'NoneType' object is not subscriptable
+2018-05-16 06:13:31 ERROR (MainThread) [homeassistant.core] Error doing job: Task exception was never retrieved
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/core.py", line 1002, in _event_to_service_call
+    await service_handler.func(service_call)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/group/__init__.py", line 295, in groups_service_handler
+    **extra_arg
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/group/__init__.py", line 456, in async_create_group
+    yield from component.async_add_entities([group], True)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/setup.py", line 142, in _async_setup_component
+    result = await component.async_setup(hass, processed_config)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/automation/__init__.py", line 165, in async_setup
+    yield from _async_process_config(hass, config, component)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/automation/__init__.py", line 412, in _async_process_config
+    yield from component.async_add_entities(entities)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 174, in _async_load
+    unique_id=info['unique_id'],
+TypeError: 'NoneType' object is not subscriptable
+2018-05-16 06:13:31 ERROR (MainThread) [homeassistant.core] Error doing job: Task exception was never retrieved
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/core.py", line 1002, in _event_to_service_call
+    await service_handler.func(service_call)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/group/__init__.py", line 295, in groups_service_handler
+    **extra_arg
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/group/__init__.py", line 456, in async_create_group
+    yield from component.async_add_entities([group], True)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/setup.py", line 142, in _async_setup_component
+    result = await component.async_setup(hass, processed_config)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/automation/__init__.py", line 165, in async_setup
+    yield from _async_process_config(hass, config, component)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/automation/__init__.py", line 412, in _async_process_config
+    yield from component.async_add_entities(entities)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 174, in _async_load
+    unique_id=info['unique_id'],
+TypeError: 'NoneType' object is not subscriptable
+2018-05-16 06:13:31 ERROR (MainThread) [homeassistant.core] Error doing job: Task exception was never retrieved
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/core.py", line 1002, in _event_to_service_call
+    await service_handler.func(service_call)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/group/__init__.py", line 295, in groups_service_handler
+    **extra_arg
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/group/__init__.py", line 456, in async_create_group
+    yield from component.async_add_entities([group], True)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/setup.py", line 142, in _async_setup_component
+    result = await component.async_setup(hass, processed_config)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/automation/__init__.py", line 165, in async_setup
+    yield from _async_process_config(hass, config, component)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/automation/__init__.py", line 412, in _async_process_config
+    yield from component.async_add_entities(entities)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 174, in _async_load
+    unique_id=info['unique_id'],
+TypeError: 'NoneType' object is not subscriptable
+2018-05-16 06:13:31 ERROR (MainThread) [homeassistant.core] Error doing job: Task exception was never retrieved
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/core.py", line 1002, in _event_to_service_call
+    await service_handler.func(service_call)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/group/__init__.py", line 295, in groups_service_handler
+    **extra_arg
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/group/__init__.py", line 456, in async_create_group
+    yield from component.async_add_entities([group], True)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/setup.py", line 142, in _async_setup_component
+    result = await component.async_setup(hass, processed_config)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/automation/__init__.py", line 165, in async_setup
+    yield from _async_process_config(hass, config, component)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/automation/__init__.py", line 412, in _async_process_config
+    yield from component.async_add_entities(entities)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 174, in _async_load
+    unique_id=info['unique_id'],
+TypeError: 'NoneType' object is not subscriptable
+2018-05-16 06:13:31 ERROR (MainThread) [homeassistant.core] Error doing job: Task exception was never retrieved
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/core.py", line 1002, in _event_to_service_call
+    await service_handler.func(service_call)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/group/__init__.py", line 295, in groups_service_handler
+    **extra_arg
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/group/__init__.py", line 456, in async_create_group
+    yield from component.async_add_entities([group], True)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/setup.py", line 142, in _async_setup_component
+    result = await component.async_setup(hass, processed_config)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/automation/__init__.py", line 165, in async_setup
+    yield from _async_process_config(hass, config, component)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/automation/__init__.py", line 412, in _async_process_config
+    yield from component.async_add_entities(entities)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 174, in _async_load
+    unique_id=info['unique_id'],
+TypeError: 'NoneType' object is not subscriptable
+2018-05-16 06:13:31 ERROR (MainThread) [homeassistant.core] Error doing job: Task exception was never retrieved
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/core.py", line 1002, in _event_to_service_call
+    await service_handler.func(service_call)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/group/__init__.py", line 295, in groups_service_handler
+    **extra_arg
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/group/__init__.py", line 456, in async_create_group
+    yield from component.async_add_entities([group], True)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/setup.py", line 142, in _async_setup_component
+    result = await component.async_setup(hass, processed_config)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/automation/__init__.py", line 165, in async_setup
+    yield from _async_process_config(hass, config, component)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/automation/__init__.py", line 412, in _async_process_config
+    yield from component.async_add_entities(entities)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 174, in _async_load
+    unique_id=info['unique_id'],
+TypeError: 'NoneType' object is not subscriptable
+2018-05-16 06:13:31 ERROR (MainThread) [homeassistant.core] Error doing job: Task exception was never retrieved
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/core.py", line 1002, in _event_to_service_call
+    await service_handler.func(service_call)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/group/__init__.py", line 295, in groups_service_handler
+    **extra_arg
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/group/__init__.py", line 456, in async_create_group
+    yield from component.async_add_entities([group], True)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/setup.py", line 142, in _async_setup_component
+    result = await component.async_setup(hass, processed_config)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/automation/__init__.py", line 165, in async_setup
+    yield from _async_process_config(hass, config, component)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/automation/__init__.py", line 412, in _async_process_config
+    yield from component.async_add_entities(entities)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 174, in _async_load
+    unique_id=info['unique_id'],
+TypeError: 'NoneType' object is not subscriptable
+2018-05-16 06:13:44 ERROR (MainThread) [homeassistant.core] Error doing job: Task exception was never retrieved
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/core.py", line 1002, in _event_to_service_call
+    await service_handler.func(service_call)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/group/__init__.py", line 295, in groups_service_handler
+    **extra_arg
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/group/__init__.py", line 456, in async_create_group
+    yield from component.async_add_entities([group], True)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/setup.py", line 142, in _async_setup_component
+    result = await component.async_setup(hass, processed_config)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/automation/__init__.py", line 165, in async_setup
+    yield from _async_process_config(hass, config, component)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/automation/__init__.py", line 412, in _async_process_config
+    yield from component.async_add_entities(entities)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 174, in _async_load
+    unique_id=info['unique_id'],
+TypeError: 'NoneType' object is not subscriptable
+2018-05-16 06:18:10 ERROR (Thread-2) [homeassistant.components.device_tracker.xiaomi] Connection to the router timed out at URL http://192.168.31.1/cgi-bin/luci/;stok=f366ff636e1920e604b0920433782b7e/api/misystem/devicelist
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/urllib3/connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/usr/local/lib/python3.5/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.5/http/client.py", line 1198, in getresponse
+    response.begin()
+  File "/usr/lib/python3.5/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.5/http/client.py", line 258, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.5/socket.py", line 576, in readinto
+    return self._sock.recv_into(b)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/requests/adapters.py", line 440, in send
+    timeout=timeout
+  File "/usr/local/lib/python3.5/dist-packages/urllib3/connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/usr/local/lib/python3.5/dist-packages/urllib3/util/retry.py", line 357, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/local/lib/python3.5/dist-packages/urllib3/packages/six.py", line 686, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/urllib3/connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "/usr/local/lib/python3.5/dist-packages/urllib3/connectionpool.py", line 389, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/usr/local/lib/python3.5/dist-packages/urllib3/connectionpool.py", line 309, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+urllib3.exceptions.ReadTimeoutError: HTTPConnectionPool(host='192.168.31.1', port=80): Read timed out. (read timeout=5)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/device_tracker/xiaomi.py", line 113, in _retrieve_list
+    res = requests.get(url, timeout=5, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/requests/api.py", line 72, in get
+    return request('get', url, params=params, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/requests/sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/requests/sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/requests/adapters.py", line 521, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPConnectionPool(host='192.168.31.1', port=80): Read timed out. (read timeout=5)
+2018-05-16 06:19:56 ERROR (MainThread) [aiohttp.server] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/aiohttp/web_protocol.py", line 381, in start
+    resp = await self._request_handler(request)
+  File "/usr/local/lib/python3.5/dist-packages/aiohttp/web_app.py", line 322, in _handle
+    resp = await handler(request)
+  File "/usr/local/lib/python3.5/dist-packages/aiohttp/web_middlewares.py", line 88, in impl
+    return await handler(request)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/http/static.py", line 68, in staticresource_middleware
+    return await handler(request)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/http/real_ip.py", line 27, in real_ip_middleware
+    return await handler(request)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/http/ban.py", line 68, in ban_middleware
+    return await handler(request)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/http/auth.py", line 52, in auth_middleware
+    return await handler(request)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/http/view.py", line 104, in handle
+    result = await result
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/config/entity_registry.py", line 25, in get
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/core.py", line 1002, in _event_to_service_call
+    await service_handler.func(service_call)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/group/__init__.py", line 295, in groups_service_handler
+    **extra_arg
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/group/__init__.py", line 456, in async_create_group
+    yield from component.async_add_entities([group], True)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 382, in __iter__
+    return self.result()  # May raise too.
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/setup.py", line 142, in _async_setup_component
+    result = await component.async_setup(hass, processed_config)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/automation/__init__.py", line 165, in async_setup
+    yield from _async_process_config(hass, config, component)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/components/automation/__init__.py", line 412, in _async_process_config
+    yield from component.async_add_entities(entities)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_platform.py", line 212, in async_add_entities
+    registry = await async_get_registry(hass)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 217, in async_get_registry
+    await registry.async_ensure_loaded()
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 161, in async_ensure_loaded
+    await self._load_task
+  File "/usr/lib/python3.5/asyncio/futures.py", line 380, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 304, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 239, in _step
+    result = coro.send(None)
+  File "/usr/local/lib/python3.5/dist-packages/homeassistant/helpers/entity_registry.py", line 174, in _async_load
+    unique_id=info['unique_id'],
+TypeError: 'NoneType' object is not subscriptable
