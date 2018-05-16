@@ -13,8 +13,8 @@ public class Test {
 
 
     public static void main(String[] args) {
-//        Logc.e(FILE_PATH);
-//        fuck();
+        Logc.e(FILE_PATH);
+        fuck();
 //        try {
 //            new WebServer(8088).start();
 //        } catch (IOException e) {
@@ -29,7 +29,7 @@ public class Test {
 //            var2.printStackTrace();
 //        }
 
-        test1();
+//        test1();
     }
 
     public static String printLine(){
