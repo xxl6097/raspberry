@@ -76,6 +76,7 @@ public class MiSocketPlusManager {
                             lock.wait(time * 1000);
                         } catch (InterruptedException e) {
                             //e.printStackTrace();
+                            Logc.e(""+(e==null?"":e.getMessage()));
                         }
                     }
                 }
