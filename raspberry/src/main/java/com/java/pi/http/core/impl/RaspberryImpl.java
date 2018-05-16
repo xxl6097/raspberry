@@ -5,7 +5,7 @@ import com.java.pi.util.Logc;
 
 import java.util.Map;
 
-public class PiImpl extends com.java.pi.http.core.AbstractGetHttpFactory {
+public class RaspberryImpl extends com.java.pi.http.core.AbstractGetHttpFactory {
     final String PATH_MI_SOCKET_PLUS = "/v1/pi/switch";
     final String PATH_MI_LIGHT = "/v1/pi/light";
     final String PATH_MI_LIGHT_STATE = "/v1/pi/state";
@@ -14,7 +14,7 @@ public class PiImpl extends com.java.pi.http.core.AbstractGetHttpFactory {
 
     @Override
     protected String onMessageReceive(String path, Map<String, String> param) {
-        Logc.d("=========================PiImpl :" + path + " " + (param == null ? "param is null" : param.toString()));
+        Logc.d("=========================RaspberryImpl :" + path + " " + (param == null ? "param is null" : param.toString()));
         String result = null;
         if (com.java.pi.http.util.Util.isEmpty(path))
             return result;
@@ -32,7 +32,7 @@ public class PiImpl extends com.java.pi.http.core.AbstractGetHttpFactory {
             Logc.e("### PATH_MI_LIGHT_STATE:"+path);
             result = processState(param);
         }
-        Logc.e("### PiImpl:"+result);
+        Logc.e("### RaspberryImpl:"+result);
         return result;
     }
 

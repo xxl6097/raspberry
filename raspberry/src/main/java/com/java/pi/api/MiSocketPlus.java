@@ -3,11 +3,9 @@ package com.java.pi.api;
 import com.java.pi.bean.MIState;
 import com.java.pi.bean.RaspPiBean;
 import com.java.pi.http.util.Util;
-import com.java.pi.util.Logc;
 import com.java.pi.util.RaspberryConst;
 
 public class MiSocketPlus {
-    private static Thread miSocketStateThread = null;
     public static MIState getSocketPlusState(){
         RaspPiBean piBean = RaspBerryApi.getDeviceState(RaspberryConst.ENTITY.MI_SOCKET);
         if (piBean!=null){
@@ -59,41 +57,4 @@ public class MiSocketPlus {
     }
 
 
-
-    public static void keepMiSocketPlusOn(final long time){
-        if (miSocketStateThread != null){
-            miSocketStateThread.interrupt();
-            miSocketStateThread = null;
-        }
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    String result = "";
-                    while (true){
-                        MIState state = getSocketPlusState();
-                        Logc.i("keepMiSocketPlusOn:"+state.value());
-                        if (state == MIState.OFF){
-                            result = RaspBerryApi.MiSocketTurnOn();
-                            Logc.i("MiSocketTurnOn:"+result);
-                            if (!Util.isEmpty(result)){
-                                if (result.equals("[]")){
-                                    result = RaspBerryApi.HomeAssistantRestart();
-                                    Logc.i("HomeAssistantRestart:"+result);
-                                }
-                            }else{
-                            }
-                        }else if (state == MIState.ON){
-                        }else{
-                            result = RaspBerryApi.HomeAssistantRestart();
-                            Logc.i("HomeAssistantRestart:"+result);
-                        }
-                        Thread.sleep(time * 1000);
-                    }
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();
-    }
 }

@@ -2,6 +2,7 @@ package com.java.pi;
 
 import com.java.pi.api.MiSocketPlus;
 import com.java.pi.http.Server;
+import com.java.pi.services.MiSocketPlusManager;
 import com.java.pi.util.RaspberryConst;
 import com.java.pi.wifi.LanDiscover;
 
@@ -12,8 +13,8 @@ public class Main {
     public static void main(String[] args) {
         System.out.println(RaspberryConst.HTTP.FILE_PATH);
         startServer(args);
-//        scanLan();
-        MiSocketPlus.keepMiSocketPlusOn(60);
+        //每60s检测一次MiSocketPlus状态，如果关闭了，则开启
+        MiSocketPlusManager.getInstance().keepMiSocketPlusHangon(60);
     }
 
 
