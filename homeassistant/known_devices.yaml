@@ -3,7 +3,7 @@ chuangmiirv2_miio49397173:
   hide_if_away: false
   icon:
   mac: 28:6C:07:22:81:A0
-  name: chuangmi-ir-v2 miio49397173
+  name: 小米万能遥控器
   picture:
   track: true
 
@@ -11,7 +11,7 @@ zimipowerstripv2_miio62766097:
   hide_if_away: false
   icon:
   mac: 34:CE:00:FC:CD:69
-  name: zimi-powerstrip-v2 miio62766097
+  name: 小米插线板
   picture:
   track: true
 
@@ -19,7 +19,7 @@ lumigatewayv3_miio55587006:
   hide_if_away: false
   icon:
   mac: 28:6C:07:FA:31:4F
-  name: lumi-gateway-v3 miio55587006
+  name: 小米网关
   picture:
   track: true
 
@@ -27,7 +27,7 @@ raspberrypi:
   hide_if_away: false
   icon:
   mac: B8:27:EB:FE:D9:7B
-  name: raspberrypi
+  name: 树莓派
   picture:
   track: true
 
@@ -35,7 +35,7 @@ unknown:
   hide_if_away: false
   icon:
   mac: 34:CE:00:BE:19:CC
-  name: Unknown
+  name: Yeelight吸顶灯
   picture:
   track: true
 
@@ -43,7 +43,7 @@ uuxiasmacpro:
   hide_if_away: false
   icon:
   mac: 60:F8:1D:A9:99:3C
-  name: uuxias-Mac-Pro
+  name: MacBook Pro
   picture:
   track: true
 
@@ -51,7 +51,7 @@ dca904c6f566:
   hide_if_away: false
   icon:
   mac: DC:A9:04:C6:F5:66
-  name: dca904c6f566
+  name: 夏小力的Iphone
   picture:
   track: true
 
@@ -75,7 +75,7 @@ dca904c6f566:
   hide_if_away: false
   icon:
   mac: 78:11:DC:53:74:39
-  name: 智能插座
+  name: 米家插座增强版
   picture:
   track: true
 
@@ -83,6 +83,6 @@ dca904c6f566:
   hide_if_away: false
   icon:
   mac: 24:0A:64:08:83:F3
-  name: 240a640883f3
+  name: 小米盒子
   picture:
   track: true
