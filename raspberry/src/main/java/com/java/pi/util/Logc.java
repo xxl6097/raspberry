@@ -182,7 +182,12 @@ public class Logc {
     public static String printLine() {
         StackTraceElement[] trace = new Throwable().getStackTrace();
         // 下标为0的元素是上一行语句的信息, 下标为1的才是调用printLine的地方的信息
-        StackTraceElement tmp = trace[1];
+        int len = trace.length - 1;
+        String tar = trace[len].getClassName();
+        if (tar.equals(Thread.class.getName())){
+            len--;
+        }
+        StackTraceElement tmp = trace[len];
         String methodLine = "(" + tmp.getFileName() + ":" + tmp.getLineNumber() + ")";
         return methodLine;
     }
