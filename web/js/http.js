@@ -75,7 +75,8 @@ function getDeviceState() {
 
 
     var path = "/v1/dev/state?entityid=timer";
-    doget(path, function (ret) {
+    doget(path, function (msg) {
+        var ret = JSON.parse(msg);
         var timeId = document.getElementById('timer_id');
         if (ret.code == 0) {
             timeId.checked = true;
