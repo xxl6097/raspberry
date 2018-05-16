@@ -53,6 +53,7 @@ public class MiSocketPlusManager {
                     while (running) {
                         try {
                             if (!pause) {
+                                Logc.e("keepMiSocketPlusHangon is hang on...");
                                 lock.wait();
                             }
                             MIState state = MiSocketPlus.getSocketPlusState();
