@@ -1,6 +1,7 @@
 package com.java.pi.http.core.impl;
 
 import com.java.pi.api.RaspBerryApi;
+import com.java.pi.services.MiSocketPlusManager;
 import com.java.pi.util.Logc;
 
 import java.util.Map;
@@ -11,6 +12,8 @@ public class RaspberryImpl extends com.java.pi.http.core.AbstractGetHttpFactory 
     final String PATH_MI_LIGHT_STATE = "/v1/pi/state";
     final String PATH_MI_GATEWAY = "/v1/pi/gateway";
     final String PATH_MI_MQTT = "/v1/pi/mqtt";
+    final String PATH_MI_TIME = "/v1/pi/timer";
+    final String PATH_DEV_STATE = "/v1/dev/state";
 
     @Override
     protected String onMessageReceive(String path, Map<String, String> param) {
@@ -31,9 +34,59 @@ public class RaspberryImpl extends com.java.pi.http.core.AbstractGetHttpFactory 
         }else if (path.equals(PATH_MI_LIGHT_STATE)){
             Logc.e("### PATH_MI_LIGHT_STATE:"+path);
             result = processState(param);
+        }else if (path.equals(PATH_MI_TIME)){
+            Logc.e("### PATH_MI_TIME:"+path);
+            result = processTimer(param);
+        }else if (path.equals(PATH_DEV_STATE)){
+            Logc.e("### PATH_DEV_STATE:"+path);
+            result = getDevState(param);
         }
         Logc.e("### RaspberryImpl:"+result);
         return result;
+    }
+
+    private String getDevState(Map<String, String> param) {
+        String result = "";
+        String entityid = param.get("entityid");
+        if (com.java.pi.http.util.Util.isEmpty(entityid)) {
+            result = "{\"code:\"-1}";
+            return result;
+        }
+
+        if (entityid.equals("timer")){
+            boolean state = MiSocketPlusManager.getInstance().isAlive();
+            if (state){
+                result = "{\"code:\"0}";
+            }else{
+                result = "{\"code:\"-1}";
+            }
+        }
+
+        Logc.e(result);
+        return result;
+    }
+
+    private String processTimer(Map<String, String> param) {
+        String result = "";
+        String callback = param.get("callback");
+        String state = param.get("state");
+        if (com.java.pi.http.util.Util.isEmpty(state)) {
+            result = "state is null";
+            String data = ";" + callback + "(" + result + ");";
+            return data;
+        }
+        if (state.equals("on")){
+            MiSocketPlusManager.getInstance().setState(true);
+        }else{
+            MiSocketPlusManager.getInstance().setState(false);
+        }
+        result = "sucess";
+        String data = result;
+        if (!com.java.pi.http.util.Util.isEmpty(callback)){
+            data = ";" + callback + "(" + result + ");";
+        }
+        Logc.e(data);
+        return data;
     }
 
     private String processState(Map<String, String> param) {

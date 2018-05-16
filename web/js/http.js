@@ -71,6 +71,18 @@ function getDeviceState() {
             console.log(JSON.stringify(err));
         }
     );
+
+
+    var path = "/v1/dev/state?entityid=timer";
+    doget(path, function (ret) {
+        var timeId = getId('socket_plus_listen_id');
+        if (ret.code == 0) {
+            timeId.checked = true;
+        } else {
+            timeId.checked = false;
+        }
+    }, function (err) {
+    });
 }
 
 
@@ -119,6 +131,20 @@ function SocketPlus() {
     }, function (err) {
         console.log("====SocketPlus" + err);
         tips('SocketPlus控制失败');
+    });
+}
+
+function TimerListen() {
+    var timeId = getId('socket_plus_listen_id');
+    var state = timeId.checked;
+    var path = "/v1/pi/timer?state=" + (state ? "on" : "off");
+    doget(path, function (result) {
+        var json = JSON.parse(result);
+        console.log("====TimerListen" + json);
+        tips('TimerListen控制成功');
+    }, function (err) {
+        console.log("====TimerListen" + err);
+        tips('TimerListen控制失败');
     });
 }
 

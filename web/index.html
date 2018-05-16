@@ -17,13 +17,6 @@ webstorm激活
 <body onload="load()">
 
 <div id="login">
-    <div>
-        <input id="btnConnect" type="button" value="启动日志" onclick="connect()"/>
-    </div>
-    <div>
-        <input id="post1" type="button" value="保存日志" onclick="Toast('sfe',1000)"/>
-        <input id="sendText" type="text" placeholder="设置log过滤"/>
-    </div>
 
     <div style="margin-top: 10px">
         <div style="display: inline-block;" class="div-left-first">Yeelight吸顶灯：</div>
@@ -44,7 +37,7 @@ webstorm激活
     <div style="margin-top: 10px">
         <div style="display: inline-block;" class="div-left-first">定时监测插座：</div>
         <div style="display: inline-block;" class="switch demo1">
-            <input id="socket_plus_listen_id" type="checkbox" onclick="SocketPlus()">
+            <input id="socket_plus_listen_id" type="checkbox" onclick="TimerListen()">
             <label></label>
         </div>
     </div>

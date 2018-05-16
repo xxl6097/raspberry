@@ -14,13 +14,14 @@ public class MiSocketPlusManager {
     //线程标识
     private boolean running = true;
     //暂停标识
-    private boolean pause = false;
+    private boolean pause = true;
     //线程锁
     private byte[] lock = new byte[0];
+
     public static MiSocketPlusManager getInstance() {
-        if (instance == null){
-            synchronized (MiSocketPlusManager.class){
-                if (instance == null){
+        if (instance == null) {
+            synchronized (MiSocketPlusManager.class) {
+                if (instance == null) {
                     instance = new MiSocketPlusManager();
                 }
             }
@@ -28,8 +29,17 @@ public class MiSocketPlusManager {
         return instance;
     }
 
-    public void keepMiSocketPlusHangon(final long time){
-        if (miSocketStateThread != null){
+    public boolean isAlive() {
+        if (miSocketStateThread == null)
+            return false;
+        if (miSocketStateThread.isAlive() && running)
+            return true;
+        return false;
+    }
+
+    public void keepMiSocketPlusHangon(final long time) {
+        running = true;
+        if (miSocketStateThread != null) {
             miSocketStateThread.interrupt();
             miSocketStateThread = null;
         }
@@ -40,7 +50,7 @@ public class MiSocketPlusManager {
                     synchronized (this) {
                         String result = "";
                         while (running) {
-                            if (pause) {
+                            if (!pause) {
                                 lock.wait();
                             }
                             MIState state = MiSocketPlus.getSocketPlusState();
@@ -71,8 +81,9 @@ public class MiSocketPlusManager {
         miSocketStateThread.start();
     }
 
-    public void switchMode(boolean ispause) {
+    public void setState(boolean ispause) {
         this.pause = ispause;
+        running = true;
         if (wake != null) {
             wake.interrupt();
             return;
@@ -83,8 +94,8 @@ public class MiSocketPlusManager {
                 synchronized (lock) {
                     while (true) {
                         lock.notifyAll();
-                        Logc.d("#########switchMode# " );
-                        if (!running){
+                        Logc.d("#########switchMode# ");
+                        if (!running) {
                             break;
                         }
 
@@ -96,7 +107,12 @@ public class MiSocketPlusManager {
                     }
                 }
             }
-        }, "switchMode-" );
+        }, "switchMode-");
         wake.start();
+    }
+
+    public void stop() {
+        setState(false);
+        running = false;
     }
 }
