@@ -1,0 +1,275 @@
+/home/java/web/
+[8888]
+##raspberry =================================HttpServerManager.startHttpServer.port8888
+host:http://192.168.31.114:8123/api/states/switch.mi_socket_plus
+java.net.ConnectException: Network is unreachable
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:211)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:308)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:326)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1169)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1105)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:999)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:933)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1513)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1441)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at com.java.pi.http.http.SimpleHttpUtils.sendRequest(SimpleHttpUtils.java:305)
+	at com.java.pi.http.http.SimpleHttpUtils.get(SimpleHttpUtils.java:159)
+	at com.java.pi.http.http.SimpleHttpUtils.get(SimpleHttpUtils.java:147)
+	at com.java.pi.api.RaspBerryApi.getDeviceState(RaspBerryApi.java:157)
+	at com.java.pi.api.MiSocketPlus.getSocketPlusState(MiSocketPlus.java:10)
+	at com.java.pi.services.MiSocketPlusManager$1.run(MiSocketPlusManager.java:59)
+	at java.lang.Thread.run(Thread.java:745)
+Network is unreachable
+##raspberry keepMiSocketPlusOn:hbunavailable
+Exception in thread "Thread-2" java.lang.IllegalMonitorStateException
+	at java.lang.Object.wait(Native Method)
+	at com.java.pi.services.MiSocketPlusManager$1.run(MiSocketPlusManager.java:76)
+	at java.lang.Thread.run(Thread.java:745)
+##raspberry =========================RaspberryImpl :/v1/dev/state {entityid=timer}
+##raspberry ### PATH_DEV_STATE:/v1/dev/state
+##raspberry ==getDevState timer
+##raspberry ==isAlive Thread[Thread-2,5,]
+##raspberry ==isAlive.running true
+##raspberry ==getDevState.state true
+##raspberry {"code":0}
+##raspberry ### RaspberryImpl:{"code":0}
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@16959b5
+##raspberry =========================RaspberryImpl :/favicon.ico {}
+##raspberry ### RaspberryImpl:null
+##raspberry ====WebServerImpl==== /home/java/web/favicon.ico
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@18bbd8b
+##raspberry =========================RaspberryImpl :/ {}
+##raspberry ### RaspberryImpl:null
+##raspberry ====WebServerImpl==== /home/java/web/index.html
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@17f241c
+##raspberry =========================RaspberryImpl :/js/http.js {}
+##raspberry ### RaspberryImpl:null
+##raspberry ====WebServerImpl==== /home/java/web/js/http.js
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@1200c69
+##raspberry =========================RaspberryImpl :/css/style.css {}
+##raspberry ### RaspberryImpl:null
+##raspberry ====WebServerImpl==== /home/java/web/css/style.css
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@f0cc20
+##raspberry =========================RaspberryImpl :/js/jquery.min.js {}
+##raspberry ### RaspberryImpl:null
+##raspberry ====WebServerImpl==== /home/java/web/js/jquery.min.js
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@1c10009
+##raspberry =========================RaspberryImpl :/v1/pi/state {entityid=switch.mi_socket_plus}
+##raspberry ### PATH_MI_LIGHT_STATE:/v1/pi/state
+host:http://192.168.31.114:8123/api/states/switch.mi_socket_plus
+{"attributes": {"friendly_name": "\u7c73\u5bb6\u63d2\u5ea7\u589e\u5f3a\u7248", "icon": "mdi:power-socket", "load_power": 300, "model": "chuangmi.plug.v3", "temperature": 48, "wifi_led": true}, "entity_id": "switch.mi_socket_plus", "last_changed": "2018-05-16T07:15:08.393712+00:00", "last_updated": "2018-05-16T07:15:08.393712+00:00", "state": "on"}
+##raspberry ### MiState:{"attributes": {"friendly_name": "\u7c73\u5bb6\u63d2\u5ea7\u589e\u5f3a\u7248", "icon": "mdi:power-socket", "load_power": 300, "model": "chuangmi.plug.v3", "temperature": 48, "wifi_led": true}, "entity_id": "switch.mi_socket_plus", "last_changed": "2018-05-16T07:15:08.393712+00:00", "last_updated": "2018-05-16T07:15:08.393712+00:00", "state": "on"}
+##raspberry {"attributes": {"friendly_name": "\u7c73\u5bb6\u63d2\u5ea7\u589e\u5f3a\u7248", "icon": "mdi:power-socket", "load_power": 300, "model": "chuangmi.plug.v3", "temperature": 48, "wifi_led": true}, "entity_id": "switch.mi_socket_plus", "last_changed": "2018-05-16T07:15:08.393712+00:00", "last_updated": "2018-05-16T07:15:08.393712+00:00", "state": "on"}
+##raspberry ### RaspberryImpl:{"attributes": {"friendly_name": "\u7c73\u5bb6\u63d2\u5ea7\u589e\u5f3a\u7248", "icon": "mdi:power-socket", "load_power": 300, "model": "chuangmi.plug.v3", "temperature": 48, "wifi_led": true}, "entity_id": "switch.mi_socket_plus", "last_changed": "2018-05-16T07:15:08.393712+00:00", "last_updated": "2018-05-16T07:15:08.393712+00:00", "state": "on"}
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@4eece3
+##raspberry =========================RaspberryImpl :/favicon.ico {}
+##raspberry ### RaspberryImpl:null
+##raspberry ====WebServerImpl==== /home/java/web/favicon.ico
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@1f8aea0
+##raspberry =========================RaspberryImpl :/v1/pi/state {entityid=light.yeelight}
+##raspberry ### PATH_MI_LIGHT_STATE:/v1/pi/state
+host:http://192.168.31.114:8123/api/states/light.yeelight
+{"attributes": {"friendly_name": "Yeelight\u5438\u9876\u706f", "max_mireds": 588, "min_mireds": 153, "supported_features": 63}, "entity_id": "light.yeelight", "last_changed": "2018-05-16T07:13:22.930947+00:00", "last_updated": "2018-05-16T07:13:22.930947+00:00", "state": "off"}
+##raspberry ### MiState:{"attributes": {"friendly_name": "Yeelight\u5438\u9876\u706f", "max_mireds": 588, "min_mireds": 153, "supported_features": 63}, "entity_id": "light.yeelight", "last_changed": "2018-05-16T07:13:22.930947+00:00", "last_updated": "2018-05-16T07:13:22.930947+00:00", "state": "off"}
+##raspberry {"attributes": {"friendly_name": "Yeelight\u5438\u9876\u706f", "max_mireds": 588, "min_mireds": 153, "supported_features": 63}, "entity_id": "light.yeelight", "last_changed": "2018-05-16T07:13:22.930947+00:00", "last_updated": "2018-05-16T07:13:22.930947+00:00", "state": "off"}
+##raspberry ### RaspberryImpl:{"attributes": {"friendly_name": "Yeelight\u5438\u9876\u706f", "max_mireds": 588, "min_mireds": 153, "supported_features": 63}, "entity_id": "light.yeelight", "last_changed": "2018-05-16T07:13:22.930947+00:00", "last_updated": "2018-05-16T07:13:22.930947+00:00", "state": "off"}
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@106ec81
+##raspberry =========================RaspberryImpl :/v1/dev/state {entityid=timer}
+##raspberry ### PATH_DEV_STATE:/v1/dev/state
+##raspberry ==getDevState timer
+##raspberry ==isAlive Thread[Thread-2,5,]
+##raspberry ==isAlive.running true
+##raspberry ==getDevState.state true
+##raspberry {"code":0}
+##raspberry ### RaspberryImpl:{"code":0}
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@1e7f67d
+##raspberry =========================RaspberryImpl :/ {}
+##raspberry ### RaspberryImpl:null
+##raspberry ====WebServerImpl==== /home/java/web/index.html
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@1d86719
+##raspberry =========================RaspberryImpl :/css/style.css {}
+##raspberry ### RaspberryImpl:null
+##raspberry ====WebServerImpl==== /home/java/web/css/style.css
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@dafc46
+##raspberry =========================RaspberryImpl :/js/jquery.min.js {}
+##raspberry ### RaspberryImpl:null
+##raspberry ====WebServerImpl==== /home/java/web/js/jquery.min.js
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@1396b79
+##raspberry =========================RaspberryImpl :/js/http.js {}
+##raspberry ### RaspberryImpl:null
+##raspberry ====WebServerImpl==== /home/java/web/js/http.js
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@157204
+##raspberry =========================RaspberryImpl :/v1/pi/state {entityid=light.yeelight}
+##raspberry ### PATH_MI_LIGHT_STATE:/v1/pi/state
+host:http://192.168.31.114:8123/api/states/light.yeelight
+{"attributes": {"friendly_name": "Yeelight\u5438\u9876\u706f", "max_mireds": 588, "min_mireds": 153, "supported_features": 63}, "entity_id": "light.yeelight", "last_changed": "2018-05-16T07:13:22.930947+00:00", "last_updated": "2018-05-16T07:13:22.930947+00:00", "state": "off"}
+##raspberry ### MiState:{"attributes": {"friendly_name": "Yeelight\u5438\u9876\u706f", "max_mireds": 588, "min_mireds": 153, "supported_features": 63}, "entity_id": "light.yeelight", "last_changed": "2018-05-16T07:13:22.930947+00:00", "last_updated": "2018-05-16T07:13:22.930947+00:00", "state": "off"}
+##raspberry {"attributes": {"friendly_name": "Yeelight\u5438\u9876\u706f", "max_mireds": 588, "min_mireds": 153, "supported_features": 63}, "entity_id": "light.yeelight", "last_changed": "2018-05-16T07:13:22.930947+00:00", "last_updated": "2018-05-16T07:13:22.930947+00:00", "state": "off"}
+##raspberry ### RaspberryImpl:{"attributes": {"friendly_name": "Yeelight\u5438\u9876\u706f", "max_mireds": 588, "min_mireds": 153, "supported_features": 63}, "entity_id": "light.yeelight", "last_changed": "2018-05-16T07:13:22.930947+00:00", "last_updated": "2018-05-16T07:13:22.930947+00:00", "state": "off"}
+##raspberry =========================RaspberryImpl :/favicon.ico {}
+##raspberry ### RaspberryImpl:null
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@3be6ba
+##raspberry ====WebServerImpl==== /home/java/web/favicon.ico
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@13f44ef
+##raspberry =========================RaspberryImpl :/v1/dev/state {entityid=timer}
+##raspberry ### PATH_DEV_STATE:/v1/dev/state
+##raspberry ==getDevState timer
+##raspberry ==isAlive Thread[Thread-2,5,]
+##raspberry ==isAlive.running true
+##raspberry ==getDevState.state true
+##raspberry {"code":0}
+##raspberry ### RaspberryImpl:{"code":0}
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@1bae6f0
+##raspberry =========================RaspberryImpl :/v1/pi/state {entityid=switch.mi_socket_plus}
+##raspberry ### PATH_MI_LIGHT_STATE:/v1/pi/state
+host:http://192.168.31.114:8123/api/states/switch.mi_socket_plus
+{"attributes": {"friendly_name": "\u7c73\u5bb6\u63d2\u5ea7\u589e\u5f3a\u7248", "icon": "mdi:power-socket", "load_power": 300, "model": "chuangmi.plug.v3", "temperature": 48, "wifi_led": true}, "entity_id": "switch.mi_socket_plus", "last_changed": "2018-05-16T07:15:08.393712+00:00", "last_updated": "2018-05-16T07:15:08.393712+00:00", "state": "on"}
+##raspberry ### MiState:{"attributes": {"friendly_name": "\u7c73\u5bb6\u63d2\u5ea7\u589e\u5f3a\u7248", "icon": "mdi:power-socket", "load_power": 300, "model": "chuangmi.plug.v3", "temperature": 48, "wifi_led": true}, "entity_id": "switch.mi_socket_plus", "last_changed": "2018-05-16T07:15:08.393712+00:00", "last_updated": "2018-05-16T07:15:08.393712+00:00", "state": "on"}
+##raspberry {"attributes": {"friendly_name": "\u7c73\u5bb6\u63d2\u5ea7\u589e\u5f3a\u7248", "icon": "mdi:power-socket", "load_power": 300, "model": "chuangmi.plug.v3", "temperature": 48, "wifi_led": true}, "entity_id": "switch.mi_socket_plus", "last_changed": "2018-05-16T07:15:08.393712+00:00", "last_updated": "2018-05-16T07:15:08.393712+00:00", "state": "on"}
+##raspberry ### RaspberryImpl:{"attributes": {"friendly_name": "\u7c73\u5bb6\u63d2\u5ea7\u589e\u5f3a\u7248", "icon": "mdi:power-socket", "load_power": 300, "model": "chuangmi.plug.v3", "temperature": 48, "wifi_led": true}, "entity_id": "switch.mi_socket_plus", "last_changed": "2018-05-16T07:15:08.393712+00:00", "last_updated": "2018-05-16T07:15:08.393712+00:00", "state": "on"}
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@ef2de
+##raspberry =========================RaspberryImpl :/ {}
+##raspberry ### RaspberryImpl:null
+##raspberry ====WebServerImpl==== /home/java/web/index.html
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@37bcb3
+##raspberry =========================RaspberryImpl :/css/style.css {}
+##raspberry ### RaspberryImpl:null
+##raspberry ====WebServerImpl==== /home/java/web/css/style.css
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@18d6722
+##raspberry =========================RaspberryImpl :/js/jquery.min.js {}
+##raspberry ### RaspberryImpl:null
+##raspberry ====WebServerImpl==== /home/java/web/js/jquery.min.js
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@17cb564
+##raspberry =========================RaspberryImpl :/js/http.js {}
+##raspberry ### RaspberryImpl:null
+##raspberry ====WebServerImpl==== /home/java/web/js/http.js
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@100c5d0
+##raspberry =========================RaspberryImpl :/favicon.ico {}
+##raspberry ### RaspberryImpl:null
+##raspberry ====WebServerImpl==== /home/java/web/favicon.ico
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@16564fc
+##raspberry =========================RaspberryImpl :/v1/dev/state {entityid=timer}
+##raspberry ### PATH_DEV_STATE:/v1/dev/state
+##raspberry ==getDevState timer
+##raspberry ==isAlive Thread[Thread-2,5,]
+##raspberry ==isAlive.running true
+##raspberry ==getDevState.state true
+##raspberry {"code":0}
+##raspberry ### RaspberryImpl:{"code":0}
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@7ba485
+##raspberry =========================RaspberryImpl :/v1/pi/state {entityid=light.yeelight}
+##raspberry ### PATH_MI_LIGHT_STATE:/v1/pi/state
+host:http://192.168.31.114:8123/api/states/light.yeelight
+{"attributes": {"friendly_name": "Yeelight\u5438\u9876\u706f", "max_mireds": 588, "min_mireds": 153, "supported_features": 63}, "entity_id": "light.yeelight", "last_changed": "2018-05-16T07:13:22.930947+00:00", "last_updated": "2018-05-16T07:13:22.930947+00:00", "state": "off"}
+##raspberry ### MiState:{"attributes": {"friendly_name": "Yeelight\u5438\u9876\u706f", "max_mireds": 588, "min_mireds": 153, "supported_features": 63}, "entity_id": "light.yeelight", "last_changed": "2018-05-16T07:13:22.930947+00:00", "last_updated": "2018-05-16T07:13:22.930947+00:00", "state": "off"}
+##raspberry {"attributes": {"friendly_name": "Yeelight\u5438\u9876\u706f", "max_mireds": 588, "min_mireds": 153, "supported_features": 63}, "entity_id": "light.yeelight", "last_changed": "2018-05-16T07:13:22.930947+00:00", "last_updated": "2018-05-16T07:13:22.930947+00:00", "state": "off"}
+##raspberry ### RaspberryImpl:{"attributes": {"friendly_name": "Yeelight\u5438\u9876\u706f", "max_mireds": 588, "min_mireds": 153, "supported_features": 63}, "entity_id": "light.yeelight", "last_changed": "2018-05-16T07:13:22.930947+00:00", "last_updated": "2018-05-16T07:13:22.930947+00:00", "state": "off"}
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@24ed4
+##raspberry =========================RaspberryImpl :/v1/pi/state {entityid=switch.mi_socket_plus}
+##raspberry ### PATH_MI_LIGHT_STATE:/v1/pi/state
+host:http://192.168.31.114:8123/api/states/switch.mi_socket_plus
+{"attributes": {"friendly_name": "\u7c73\u5bb6\u63d2\u5ea7\u589e\u5f3a\u7248", "icon": "mdi:power-socket", "load_power": 300, "model": "chuangmi.plug.v3", "temperature": 48, "wifi_led": true}, "entity_id": "switch.mi_socket_plus", "last_changed": "2018-05-16T07:15:08.393712+00:00", "last_updated": "2018-05-16T07:15:08.393712+00:00", "state": "on"}
+##raspberry ### MiState:{"attributes": {"friendly_name": "\u7c73\u5bb6\u63d2\u5ea7\u589e\u5f3a\u7248", "icon": "mdi:power-socket", "load_power": 300, "model": "chuangmi.plug.v3", "temperature": 48, "wifi_led": true}, "entity_id": "switch.mi_socket_plus", "last_changed": "2018-05-16T07:15:08.393712+00:00", "last_updated": "2018-05-16T07:15:08.393712+00:00", "state": "on"}
+##raspberry {"attributes": {"friendly_name": "\u7c73\u5bb6\u63d2\u5ea7\u589e\u5f3a\u7248", "icon": "mdi:power-socket", "load_power": 300, "model": "chuangmi.plug.v3", "temperature": 48, "wifi_led": true}, "entity_id": "switch.mi_socket_plus", "last_changed": "2018-05-16T07:15:08.393712+00:00", "last_updated": "2018-05-16T07:15:08.393712+00:00", "state": "on"}
+##raspberry ### RaspberryImpl:{"attributes": {"friendly_name": "\u7c73\u5bb6\u63d2\u5ea7\u589e\u5f3a\u7248", "icon": "mdi:power-socket", "load_power": 300, "model": "chuangmi.plug.v3", "temperature": 48, "wifi_led": true}, "entity_id": "switch.mi_socket_plus", "last_changed": "2018-05-16T07:15:08.393712+00:00", "last_updated": "2018-05-16T07:15:08.393712+00:00", "state": "on"}
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@1f6f17d
+##raspberry =========================RaspberryImpl :/ {}
+##raspberry ### RaspberryImpl:null
+##raspberry ====WebServerImpl==== /home/java/web/index.html
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@f50309
+##raspberry =========================RaspberryImpl :/css/style.css {}
+##raspberry ### RaspberryImpl:null
+##raspberry ====WebServerImpl==== /home/java/web/css/style.css
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@60e901
+##raspberry =========================RaspberryImpl :/js/jquery.min.js {}
+##raspberry ### RaspberryImpl:null
+##raspberry ====WebServerImpl==== /home/java/web/js/jquery.min.js
+##raspberry =========================RaspberryImpl :/js/http.js {}
+##raspberry ### RaspberryImpl:null
+##raspberry ====WebServerImpl==== /home/java/web/js/http.js
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@10824d6
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@eb601a
+##raspberry =========================RaspberryImpl :/v1/pi/state {entityid=light.yeelight}
+##raspberry ### PATH_MI_LIGHT_STATE:/v1/pi/state
+host:http://192.168.31.114:8123/api/states/light.yeelight
+{"attributes": {"friendly_name": "Yeelight\u5438\u9876\u706f", "max_mireds": 588, "min_mireds": 153, "supported_features": 63}, "entity_id": "light.yeelight", "last_changed": "2018-05-16T07:13:22.930947+00:00", "last_updated": "2018-05-16T07:13:22.930947+00:00", "state": "off"}
+##raspberry ### MiState:{"attributes": {"friendly_name": "Yeelight\u5438\u9876\u706f", "max_mireds": 588, "min_mireds": 153, "supported_features": 63}, "entity_id": "light.yeelight", "last_changed": "2018-05-16T07:13:22.930947+00:00", "last_updated": "2018-05-16T07:13:22.930947+00:00", "state": "off"}
+##raspberry {"attributes": {"friendly_name": "Yeelight\u5438\u9876\u706f", "max_mireds": 588, "min_mireds": 153, "supported_features": 63}, "entity_id": "light.yeelight", "last_changed": "2018-05-16T07:13:22.930947+00:00", "last_updated": "2018-05-16T07:13:22.930947+00:00", "state": "off"}
+##raspberry ### RaspberryImpl:{"attributes": {"friendly_name": "Yeelight\u5438\u9876\u706f", "max_mireds": 588, "min_mireds": 153, "supported_features": 63}, "entity_id": "light.yeelight", "last_changed": "2018-05-16T07:13:22.930947+00:00", "last_updated": "2018-05-16T07:13:22.930947+00:00", "state": "off"}
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@1264594
+##raspberry =========================RaspberryImpl :/favicon.ico {}
+##raspberry ### RaspberryImpl:null
+##raspberry ====WebServerImpl==== /home/java/web/favicon.ico
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@129fa75
+##raspberry =========================RaspberryImpl :/v1/pi/state {entityid=switch.mi_socket_plus}
+##raspberry ### PATH_MI_LIGHT_STATE:/v1/pi/state
+host:http://192.168.31.114:8123/api/states/switch.mi_socket_plus
+{"attributes": {"friendly_name": "\u7c73\u5bb6\u63d2\u5ea7\u589e\u5f3a\u7248", "icon": "mdi:power-socket", "load_power": 300, "model": "chuangmi.plug.v3", "temperature": 48, "wifi_led": true}, "entity_id": "switch.mi_socket_plus", "last_changed": "2018-05-16T07:15:08.393712+00:00", "last_updated": "2018-05-16T07:15:08.393712+00:00", "state": "on"}
+##raspberry ### MiState:{"attributes": {"friendly_name": "\u7c73\u5bb6\u63d2\u5ea7\u589e\u5f3a\u7248", "icon": "mdi:power-socket", "load_power": 300, "model": "chuangmi.plug.v3", "temperature": 48, "wifi_led": true}, "entity_id": "switch.mi_socket_plus", "last_changed": "2018-05-16T07:15:08.393712+00:00", "last_updated": "2018-05-16T07:15:08.393712+00:00", "state": "on"}
+##raspberry {"attributes": {"friendly_name": "\u7c73\u5bb6\u63d2\u5ea7\u589e\u5f3a\u7248", "icon": "mdi:power-socket", "load_power": 300, "model": "chuangmi.plug.v3", "temperature": 48, "wifi_led": true}, "entity_id": "switch.mi_socket_plus", "last_changed": "2018-05-16T07:15:08.393712+00:00", "last_updated": "2018-05-16T07:15:08.393712+00:00", "state": "on"}
+##raspberry ### RaspberryImpl:{"attributes": {"friendly_name": "\u7c73\u5bb6\u63d2\u5ea7\u589e\u5f3a\u7248", "icon": "mdi:power-socket", "load_power": 300, "model": "chuangmi.plug.v3", "temperature": 48, "wifi_led": true}, "entity_id": "switch.mi_socket_plus", "last_changed": "2018-05-16T07:15:08.393712+00:00", "last_updated": "2018-05-16T07:15:08.393712+00:00", "state": "on"}
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@53d5a0
+##raspberry =========================RaspberryImpl :/v1/dev/state {entityid=timer}
+##raspberry ### PATH_DEV_STATE:/v1/dev/state
+##raspberry ==getDevState timer
+##raspberry ==isAlive Thread[Thread-2,5,]
+##raspberry ==isAlive.running true
+##raspberry ==getDevState.state true
+##raspberry {"code":0}
+##raspberry ### RaspberryImpl:{"code":0}
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@fa97c
+##raspberry =========================RaspberryImpl :/ {}
+##raspberry ### RaspberryImpl:null
+##raspberry ====WebServerImpl==== /home/java/web/index.html
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@f2d899
+##raspberry =========================RaspberryImpl :/css/style.css {}
+##raspberry ### RaspberryImpl:null
+##raspberry ====WebServerImpl==== /home/java/web/css/style.css
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@bb7b45
+##raspberry =========================RaspberryImpl :/js/jquery.min.js {}
+##raspberry ### RaspberryImpl:null
+##raspberry ====WebServerImpl==== /home/java/web/js/jquery.min.js
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@2b003f
+##raspberry =========================RaspberryImpl :/js/http.js {}
+##raspberry ### RaspberryImpl:null
+##raspberry ====WebServerImpl==== /home/java/web/js/http.js
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@2535e5
+##raspberry =========================RaspberryImpl :/v1/pi/state {entityid=light.yeelight}
+##raspberry ### PATH_MI_LIGHT_STATE:/v1/pi/state
+host:http://192.168.31.114:8123/api/states/light.yeelight
+{"attributes": {"friendly_name": "Yeelight\u5438\u9876\u706f", "max_mireds": 588, "min_mireds": 153, "supported_features": 63}, "entity_id": "light.yeelight", "last_changed": "2018-05-16T07:13:22.930947+00:00", "last_updated": "2018-05-16T07:13:22.930947+00:00", "state": "off"}
+##raspberry ### MiState:{"attributes": {"friendly_name": "Yeelight\u5438\u9876\u706f", "max_mireds": 588, "min_mireds": 153, "supported_features": 63}, "entity_id": "light.yeelight", "last_changed": "2018-05-16T07:13:22.930947+00:00", "last_updated": "2018-05-16T07:13:22.930947+00:00", "state": "off"}
+##raspberry {"attributes": {"friendly_name": "Yeelight\u5438\u9876\u706f", "max_mireds": 588, "min_mireds": 153, "supported_features": 63}, "entity_id": "light.yeelight", "last_changed": "2018-05-16T07:13:22.930947+00:00", "last_updated": "2018-05-16T07:13:22.930947+00:00", "state": "off"}
+##raspberry ### RaspberryImpl:{"attributes": {"friendly_name": "Yeelight\u5438\u9876\u706f", "max_mireds": 588, "min_mireds": 153, "supported_features": 63}, "entity_id": "light.yeelight", "last_changed": "2018-05-16T07:13:22.930947+00:00", "last_updated": "2018-05-16T07:13:22.930947+00:00", "state": "off"}
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@17ddc73
+##raspberry =========================RaspberryImpl :/v1/dev/state {entityid=timer}
+##raspberry ### PATH_DEV_STATE:/v1/dev/state
+##raspberry ==getDevState timer
+##raspberry ==isAlive Thread[Thread-2,5,]
+##raspberry ==isAlive.running true
+##raspberry ==getDevState.state true
+##raspberry {"code":0}
+##raspberry ### RaspberryImpl:{"code":0}
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@180a3b2
+##raspberry =========================RaspberryImpl :/v1/pi/state {entityid=switch.mi_socket_plus}
+##raspberry ### PATH_MI_LIGHT_STATE:/v1/pi/state
+host:http://192.168.31.114:8123/api/states/switch.mi_socket_plus
+{"attributes": {"friendly_name": "\u7c73\u5bb6\u63d2\u5ea7\u589e\u5f3a\u7248", "icon": "mdi:power-socket", "load_power": 300, "model": "chuangmi.plug.v3", "temperature": 48, "wifi_led": true}, "entity_id": "switch.mi_socket_plus", "last_changed": "2018-05-16T07:15:08.393712+00:00", "last_updated": "2018-05-16T07:15:08.393712+00:00", "state": "on"}
+##raspberry ### MiState:{"attributes": {"friendly_name": "\u7c73\u5bb6\u63d2\u5ea7\u589e\u5f3a\u7248", "icon": "mdi:power-socket", "load_power": 300, "model": "chuangmi.plug.v3", "temperature": 48, "wifi_led": true}, "entity_id": "switch.mi_socket_plus", "last_changed": "2018-05-16T07:15:08.393712+00:00", "last_updated": "2018-05-16T07:15:08.393712+00:00", "state": "on"}
+##raspberry {"attributes": {"friendly_name": "\u7c73\u5bb6\u63d2\u5ea7\u589e\u5f3a\u7248", "icon": "mdi:power-socket", "load_power": 300, "model": "chuangmi.plug.v3", "temperature": 48, "wifi_led": true}, "entity_id": "switch.mi_socket_plus", "last_changed": "2018-05-16T07:15:08.393712+00:00", "last_updated": "2018-05-16T07:15:08.393712+00:00", "state": "on"}
+##raspberry ### RaspberryImpl:{"attributes": {"friendly_name": "\u7c73\u5bb6\u63d2\u5ea7\u589e\u5f3a\u7248", "icon": "mdi:power-socket", "load_power": 300, "model": "chuangmi.plug.v3", "temperature": 48, "wifi_led": true}, "entity_id": "switch.mi_socket_plus", "last_changed": "2018-05-16T07:15:08.393712+00:00", "last_updated": "2018-05-16T07:15:08.393712+00:00", "state": "on"}
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@2db19b
+##raspberry =========================RaspberryImpl :/favicon.ico {}
+##raspberry ### RaspberryImpl:null
+##raspberry ====WebServerImpl==== /home/java/web/favicon.ico
+##raspberry =========Server.serve.response:com.java.pi.http.core.http.NanoHTTPD$Response@19d268a
