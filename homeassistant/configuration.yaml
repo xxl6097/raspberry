@@ -120,12 +120,12 @@ switch:
     mac_address: "60-f8-1d-a9-99-3c"
 
 
-light:
-  - platform: yeelight
-    devices:
-      192.168.31.169:
-        name: Yeelight吸顶灯
-        transition: 1000
+#light:
+#  - platform: yeelight
+#    devices:
+#      192.168.31.169:
+#        name: Yeelight吸顶灯
+#        transition: 1000
 
 # 小米网关You can leave MAC empty if you only have one gateway.
 xiaomi_aqara:
