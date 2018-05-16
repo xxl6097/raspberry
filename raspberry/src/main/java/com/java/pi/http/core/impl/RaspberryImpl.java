@@ -50,7 +50,7 @@ public class RaspberryImpl extends com.java.pi.http.core.AbstractGetHttpFactory 
         String entityid = param.get("entityid");
         Logc.e("==getDevState "+entityid);
         if (com.java.pi.http.util.Util.isEmpty(entityid)) {
-            result = "{\"code:\"-1}";
+            result = "{\"code\":-1}";
             return result;
         }
 
@@ -58,9 +58,9 @@ public class RaspberryImpl extends com.java.pi.http.core.AbstractGetHttpFactory 
             boolean state = MiSocketPlusManager.getInstance().isAlive();
             Logc.e("==getDevState.state "+state);
             if (state){
-                result = "{\"code:\"0}";
+                result = "{\"code\":0}";
             }else{
-                result = "{\"code:\"-1}";
+                result = "{\"code\":-1}";
             }
         }
 
