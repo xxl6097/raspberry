@@ -1,6 +1,5 @@
 package com.java.pi;
 
-import com.java.pi.api.MiSocketPlus;
 import com.java.pi.http.Server;
 import com.java.pi.services.MiSocketPlusManager;
 import com.java.pi.util.RaspberryConst;
