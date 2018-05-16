@@ -48,7 +48,7 @@ public class MiSocketPlusManager {
         miSocketStateThread = new Thread(new Runnable() {
             @Override
             public void run() {
-                synchronized (this) {
+                synchronized (lock) {
                     String result = "";
                     while (running) {
                         try {
