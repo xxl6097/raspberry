@@ -31,14 +31,6 @@ raspberrypi:
   picture:
   track: true
 
-#unknown:
-#  hide_if_away: false
-#  icon:
-#  mac: 34:CE:00:BE:19:CC
-#  name: Yeelight吸顶灯
-#  picture:
-#  track: true
-
 uuxiasmacpro:
   hide_if_away: false
   icon:
@@ -84,5 +76,13 @@ dca904c6f566:
   icon:
   mac: 24:0A:64:08:83:F3
   name: 小米盒子
+  picture:
+  track: true
+
+unknown:
+  hide_if_away: false
+  icon:
+  mac: 34:CE:00:BE:19:CC
+  name: Yeelight吸顶灯
   picture:
   track: true
