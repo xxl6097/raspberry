@@ -13,8 +13,8 @@ public class Test {
 
 
     public static void main(String[] args) {
-        Logc.e(FILE_PATH);
-        fuck();
+//        Logc.e(FILE_PATH);
+//        fuck();
 //        try {
 //            new WebServer(8088).start();
 //        } catch (IOException e) {
@@ -29,9 +29,26 @@ public class Test {
 //            var2.printStackTrace();
 //        }
 
-
+        test1();
     }
 
+    public static String printLine(){
+        StackTraceElement[] trace = new Throwable().getStackTrace();
+        // 下标为0的元素是上一行语句的信息, 下标为1的才是调用printLine的地方的信息
+        StackTraceElement tmp = trace[1];
+        String methodLine = tmp.getClassName() + "." + tmp.getMethodName()
+                + "(" + tmp.getFileName() + ":" + tmp.getLineNumber() + ")";
+        return methodLine;
+    }
+
+    public static void test(){
+        printLine();
+    }
+
+    public static void test1(){
+        printLine();
+        test();
+    }
     private static void fuck(){
         Logc.e("fuck you"+Thread.class.getName());
     }

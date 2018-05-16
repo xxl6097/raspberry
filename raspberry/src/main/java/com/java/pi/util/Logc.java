@@ -38,7 +38,7 @@ public class Logc {
 
 
     private static void loge(String tag, String content) {
-        System.err.println( tag + content);
+        System.err.println(tag + content);
     }
 
     private static void logd(String tag, String content) {
@@ -53,9 +53,10 @@ public class Logc {
         System.out.println(getCurrentTime() + tag + content);
     }
 
-    private static String hang(){
-        return  "["+getFileName()+":"+ getLineNumber()+"]";
+    private static String hang() {
+        return printLine();
     }
+
     private static String getCurrentTime() {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
         String date = df.format(new Date());// new Date()为获取当前系统时间，也可使用当前时间戳
@@ -71,28 +72,28 @@ public class Logc {
         if (!DEBUG) {
             return;
         }
-        System.out.println(getCurrentTime()+TAG + content + objects);
+        System.out.println(getCurrentTime() + TAG + content + objects);
     }
 
     public static void i(String content, Object... objects) {
         if (!DEBUG) {
             return;
         }
-        System.out.println(getCurrentTime()+TAG + content + objects);
+        System.out.println(getCurrentTime() + TAG + content + objects);
     }
 
     public static void e(String content, Object... objects) {
         if (!DEBUG) {
             return;
         }
-        System.out.println(getCurrentTime()+TAG + content + objects);
+        System.out.println(getCurrentTime() + TAG + content + objects);
     }
 
     public static void v(String content, Object... objects) {
         if (!DEBUG) {
             return;
         }
-        System.out.println(getCurrentTime()+TAG + content + objects);
+        System.out.println(getCurrentTime() + TAG + content + objects);
     }
 
     public static void v(String content) {
@@ -159,7 +160,7 @@ public class Logc {
     public static void e(String content) {
         if (!DEBUG)
             return;
-        loge(getCurrentTime() +TAG, content);
+        loge(getCurrentTime() + TAG, content);
     }
 
     public static void e(String uTag, String content) {
@@ -178,33 +179,12 @@ public class Logc {
     }
 
 
-    public static int getLineNumber() {
-        try {
-            int len = Thread.currentThread().getStackTrace().length;
-            String tar = Thread.currentThread().getStackTrace()[len].getClassName();
-            if (tar.equals(Thread.class.getName())){
-                len --;
-            }
-            return Thread.currentThread().getStackTrace()[len-1].getLineNumber();
-        }catch (Exception e){
-
-        }
-        return 0;
-
-    }
-
-    public static String getFileName() {
-        try {
-            int len = Thread.currentThread().getStackTrace().length;
-            String tar = Thread.currentThread().getStackTrace()[len].getClassName();
-            if (tar.equals(Thread.class.getName())){
-                len --;
-            }
-            return Thread.currentThread().getStackTrace()[len-1].getFileName();
-        }catch (Exception e){
-
-        }
-        return "";
+    public static String printLine() {
+        StackTraceElement[] trace = new Throwable().getStackTrace();
+        // 下标为0的元素是上一行语句的信息, 下标为1的才是调用printLine的地方的信息
+        StackTraceElement tmp = trace[1];
+        String methodLine = "(" + tmp.getFileName() + ":" + tmp.getLineNumber() + ")";
+        return methodLine;
     }
 
     private static StackTraceElement getCallerStackTraceElement() {
