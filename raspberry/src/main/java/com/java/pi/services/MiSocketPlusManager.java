@@ -34,7 +34,7 @@ public class MiSocketPlusManager {
         if (miSocketStateThread == null)
             return false;
         Logc.e("==isAlive.running "+running);
-        if (miSocketStateThread.isAlive() && running)
+        if (running)
             return true;
         return false;
     }
