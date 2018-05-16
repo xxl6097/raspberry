@@ -30,8 +30,10 @@ public class MiSocketPlusManager {
     }
 
     public boolean isAlive() {
+        Logc.e("==isAlive "+miSocketStateThread);
         if (miSocketStateThread == null)
             return false;
+        Logc.e("==isAlive.running "+running);
         if (miSocketStateThread.isAlive() && running)
             return true;
         return false;
@@ -74,7 +76,7 @@ public class MiSocketPlusManager {
                         }
                     }
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 }
             }
         });
