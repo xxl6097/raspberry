@@ -138,6 +138,12 @@ device_tracker:
     name: 小米路由器cent
     host: 192.168.31.1
     password: het123456
+  - platform: icloud
+    username: xiaxiaoli_2005@163.com  #设置icloud账号名
+    password: Xxl2475431305.  #设置icloud密码
+    account_name: uuxia's iPhone  #此为可选项，设置icloud账号在Home Assistant中的名称
+
+
 
 #设置传感器组件
 binary_sensor:
