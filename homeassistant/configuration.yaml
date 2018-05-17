@@ -119,6 +119,12 @@ switch:
     # mac_address: "60:f8:1d:a9:99:3c"
     mac_address: "60-f8-1d-a9-99-3c"
 
+# 小米万能遥控 6e34b48ac1c7310dff113d1426818c10
+remote:
+  - platform: xiaomi_miio
+    host: 192.168.31.117
+    token: 6e34b48ac1c7310dff113d1426818c10
+    name: 小米万能遥控
 
 light:
   - platform: yeelight
