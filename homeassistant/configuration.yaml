@@ -166,7 +166,7 @@ panel_iframe:
  blog:               #面板名称
     title: 博客       #标题（必填）,在侧面板中显示。
     icon: mdi:router-wireless         #图标（可选）
-    url: http://uuxia.cn #要打开的URL（必填）。
+    url: http://uuxia.cn
 
 
 
