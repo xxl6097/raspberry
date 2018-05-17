@@ -158,6 +158,11 @@ binary_sensor:
     host: 192.168.1.1  #x.x.x.x为需要以ping方式监测的目标主机ip地址
 
 
+panel_iframe:
+ netgear:               #面板名称
+   title: 小米路由器       #标题（必填）,在侧面板中显示。
+   icon: mdi:router-wireless         #图标（可选）
+   url: http://192.168.31.1 #要打开的URL（必填）。
 
 # MQTT代理配置
 mqtt:
