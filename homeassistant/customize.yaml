@@ -1,2 +1,9 @@
 light.yeelight_ceiling_34ce00be19cc:
   friendly_name: Yeelight吸顶灯
+
+binary_sensor.motion_sensor_158d0001e7a8d2:
+  friendly_name: 人体移动传感器
+
+
+
+
