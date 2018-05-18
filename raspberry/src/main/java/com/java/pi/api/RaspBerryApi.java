@@ -68,6 +68,16 @@ public class RaspBerryApi {
         return RaspberryGetHttp(RaspberryConst.SERVICES.STATE+RaspberryConst.ENTITY.LIGHT_YEELIGHT);
     }
 
+    public static String GateWaylightTurnOn() {
+        return MiLight(RaspberryConst.ENTITY.LIGHT_GATEWAY, RaspberryConst.STATE.TURN_ON);
+    }
+    public static String GateWaylightTurnOff() {
+        //http://192.168.31.114:8123/api/services/light/turn_off
+        //{"entity_id": "light.yeelight"}
+        return MiLight(RaspberryConst.ENTITY.LIGHT_GATEWAY, RaspberryConst.STATE.TURN_OFF);
+    }
+
+
     public static String YeelightTurnOn() {
         return MiLight(RaspberryConst.ENTITY.LIGHT_YEELIGHT, RaspberryConst.STATE.TURN_ON);
     }

@@ -126,16 +126,33 @@ public class RaspberryImpl extends com.java.pi.http.core.AbstractGetHttpFactory 
         String result = "";
         String callback = param.get("callback");
         String state = param.get("state");
+        String id = param.get("id");
         if (com.java.pi.http.util.Util.isEmpty(state)) {
             result = "state is null";
             String data = ";" + callback + "(" + result + ");";
             return data;
         }
 
-        if (state.equals("on")){
-            result = RaspBerryApi.YeelightTurnOn();
+        if (id == null) {
+            if (state.equals("on")) {
+                result = RaspBerryApi.YeelightTurnOn();
+            } else {
+                result = RaspBerryApi.YeelightTurnOff();
+            }
         }else{
-            result = RaspBerryApi.YeelightTurnOff();
+            if (id.equals("gateway")){
+                if (state.equals("on")) {
+                    result = RaspBerryApi.GateWaylightTurnOn();
+                } else {
+                    result = RaspBerryApi.GateWaylightTurnOff();
+                }
+            }else if (id.equals("yeeloght")){
+                if (state.equals("on")) {
+                    result = RaspBerryApi.YeelightTurnOn();
+                } else {
+                    result = RaspBerryApi.YeelightTurnOff();
+                }
+            }
         }
 
 
