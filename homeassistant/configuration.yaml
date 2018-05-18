@@ -143,7 +143,11 @@ device_tracker:
 binary_sensor:
   - platform: ping  #指定传感器工作平台为ping
     name: ping网关
-    host: 192.168.1.1  #x.x.x.x为需要以ping方式监测的目标主机ip地址
+    host: 192.168.1.2  #x.x.x.x为需要以ping方式监测的目标主机ip地址
+#  - platform: nmap_tracker
+#    name: nmap网关
+#    hosts: 192.168.1.0/24
+
 
 
 
