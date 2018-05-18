@@ -2,8 +2,8 @@ homeassistant:
   # Name of the location where Home Assistant is running
   name: uuxia
   # Location required to calculate the time the sun rises and sets 113.973847,22.548615
-  latitude: 22.548615
-  longitude: 113.973847
+  latitude: 22.544714234510856
+  longitude: 113.96389772005207
   # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: 0
   # metric for Metric, imperial for Imperial
