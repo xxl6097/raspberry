@@ -119,13 +119,19 @@ switch:
     # mac_address: "60:f8:1d:a9:99:3c"
     mac_address: "60-f8-1d-a9-99-3c"
 
+# 小米万能遥控 6e34b48ac1c7310dff113d1426818c10
+remote:
+  - platform: xiaomi_miio
+    host: 192.168.31.117
+    token: 6e34b48ac1c7310dff113d1426818c10
+    name: 小米万能遥控
 
-light:
-  - platform: yeelight
-    devices:
-      192.168.31.169:
-        name: Yeelight吸顶灯
-        transition: 1000
+#light:
+#  - platform: yeelight
+#    devices:
+#      192.168.31.169:
+#        name: Yeelight吸顶灯
+#        transition: 1000
 
 # 小米网关You can leave MAC empty if you only have one gateway.
 xiaomi_aqara:
@@ -138,6 +144,12 @@ device_tracker:
     name: 小米路由器cent
     host: 192.168.31.1
     password: het123456
+  - platform: icloud
+    username: xiaxiaoli_2005@163.com  #设置icloud账号名
+    password: Xxl2475431305.  #设置icloud密码
+    account_name: uuxia's iPhone  #此为可选项，设置icloud账号在Home Assistant中的名称
+
+
 
 #设置传感器组件
 binary_sensor:
@@ -148,6 +160,17 @@ binary_sensor:
 #    name: nmap网关
 #    hosts: 192.168.1.0/24
 
+
+
+panel_iframe:
+ netgear:               #面板名称
+   title: 小米路由器       #标题（必填）,在侧面板中显示。
+   icon: mdi:router-wireless         #图标（可选）
+   url: http://192.168.31.1 #要打开的URL（必填）。
+ blog:               #面板名称
+    title: 博客       #标题（必填）,在侧面板中显示。
+    icon: mdi:router-wireless         #图标（可选）
+    url: http://uuxia.cn
 
 
 
