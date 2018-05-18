@@ -40,8 +40,8 @@ function tips(msg) {
 }
 
 function getDeviceState() {
-    var path = "/v1/pi/state?entityid=light.yeelight";
-    doget(path, function (msg) {
+    var path1 = "/v1/pi/state?entityid=light.yeelight";
+    doget(path1, function (msg) {
             var ret = JSON.parse(msg);
             var yeelight = document.getElementById('yeelight_id');
             if (ret.state == 'on') {
@@ -56,8 +56,8 @@ function getDeviceState() {
     );
 
 
-    var path = "/v1/pi/state?entityid=switch.mi_socket_plus";
-    doget(path, function (msg) {
+    var path2 = "/v1/pi/state?entityid=switch.mi_socket_plus";
+    doget(path2, function (msg) {
             var ret = JSON.parse(msg);
             var socketplus = document.getElementById('socket_plus_id');
             if (ret.state == 'on') {
@@ -73,9 +73,24 @@ function getDeviceState() {
         }
     );
 
+    var path3 = "/v1/pi/state?entityid=switch.mi_socket_plus_usb";
+        doget(path3, function (msg) {
+                var ret = JSON.parse(msg);
+                var socketplususb = document.getElementById('socket_plus_usb_id');
+                if (ret.state == 'on') {
+                    socketplususb.checked = true;
+                } else if (ret.state == 'off') {
+                    socketplususb.checked = false;
+                }
+            },
+            function (err) {
+                console.log(JSON.stringify(err));
+            }
+        );
 
-    var path = "/v1/dev/state?entityid=timer";
-    doget(path, function (msg) {
+
+    var path4 = "/v1/dev/state?entityid=timer";
+    doget(path4, function (msg) {
         var ret = JSON.parse(msg);
         var timeId = document.getElementById('timer_id');
         if (ret.code == 0) {
@@ -124,8 +139,7 @@ function Yeelight(id) {
 function SocketPlus() {
     var socketplus = getId('socket_plus_id');
     var state = socketplus.checked;
-    console.log(id + "====" + state)
-    var path = "/v1/pi/switch?state=" + (state ? "on" : "off");
+    var path = "/v1/pi/switch?state=" + (state ? "on" : "off") +"&entityid=misocketplus";
     doget(path, function (result) {
         var json = JSON.parse(result);
         console.log("====SocketPlus" + json);
@@ -133,6 +147,20 @@ function SocketPlus() {
     }, function (err) {
         console.log("====SocketPlus" + err);
         tips('SocketPlus控制失败');
+    });
+}
+
+function SocketPlusUsb() {
+    var socketplus = getId('socket_plus_usb_id');
+    var state = socketplus.checked;
+    var path = "/v1/pi/switch?state=" + (state ? "on" : "off") +"&entityid=misocketplushusb";
+    doget(path, function (result) {
+        var json = JSON.parse(result);
+        console.log("====SocketPlus" + json);
+        tips('SocketPlusUsb控制成功');
+    }, function (err) {
+        console.log("====SocketPlus" + err);
+        tips('SocketPlusUsb控制失败');
     });
 }
 

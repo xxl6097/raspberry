@@ -35,7 +35,7 @@ uuxiasmacpro:
   hide_if_away: false
   icon:
   mac: 60:F8:1D:A9:99:3C
-  name: MacBook Pro
+  name: Apply电脑
   picture:
   track: true
 
@@ -43,23 +43,16 @@ dca904c6f566:
   hide_if_away: false
   icon:
   mac: DC:A9:04:C6:F5:66
-  name: 夏小力的Iphone
+  name: 夏小力的iPhone
   picture:
   track: true
 
-38a4edb8849d:
-  hide_if_away: false
-  icon:
-  mac: 38:A4:ED:B8:84:9D
-  name: 38a4edb8849d
-  picture:
-  track: true
 
 805e4f17d6cc:
   hide_if_away: false
   icon:
   mac: 80:5E:4F:17:D6:CC
-  name: JMGO G7
+  name: 坚果投影仪
   picture:
   track: true
 
