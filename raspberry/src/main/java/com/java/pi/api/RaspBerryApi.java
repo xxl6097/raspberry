@@ -63,7 +63,7 @@ public class RaspBerryApi {
     }
 
     public static String YeelightState() {
-        //http://192.168.31.114:8123/api/states/light.yeelight
+        //http://192.168.31.114:8123/api/states/light.yeelight_ceiling_34ce00be19cc
         //{"entity_id": "light.yeelight"}
         return RaspberryGetHttp(RaspberryConst.SERVICES.STATE+RaspberryConst.ENTITY.LIGHT_YEELIGHT);
     }
