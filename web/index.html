@@ -31,32 +31,86 @@
         // location.search         //返回问号后的字段
     });
 </script>
+<style type="text/css">
+    .chooseBtn {
+        display: none;
+    }
+
+    .choose-label {
+        box-shadow: #ccc 0px 0px 0px 1px;
+        width: 40px;
+        height: 20px;
+        display: inline-block;
+        border-radius: 20px;
+        position: relative;
+        background-color: #bdbdbd;
+        overflow: hidden;
+    }
+
+    .choose-label:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        border-radius: 20px;
+        background-color: #fff;
+        z-index: 20;
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+
+    .chooseBtn:checked + label.choose-label:before {
+        left: 20px;
+    }
+
+    .chooseBtn:checked + label.choose-label {
+        background-color: #51ccee;
+    }
+</style>
+
 <body onload="load()">
 
 <div id="login">
 
+    <!--<input type="checkbox" name="sex" id="male" class="chooseBtn" />
+    <label for="male" class="choose-label"></label>-->
+
+
+
 
     <div style="margin-top: 10px">
         <div style="display: inline-block;color: #FF0000" class="div-left-first">Yeelight吸顶灯：</div>
-        <div style="display: inline-block;" class="switch demo1">
-            <input id="yeelight_id" type="checkbox" onclick="Yeelight('yeelight_id')">
-            <label></label>
+        <div style="display: inline-block;" >
+            <input type="checkbox" name="sex" id="yeelight_id" onclick="Yeelight()" class="chooseBtn" />
+            <label for="yeelight_id" class="choose-label"></label>
         </div>
     </div>
 
     <div style="margin-top: 10px">
         <div style="display: inline-block;color: #25d025" class="div-left-first">插座增强版：</div>
-        <div style="display: inline-block;" class="switch demo1">
+        <div style="display: inline-block;" >
+            <input type="checkbox" name="sex" id="socket_plus_id" onclick="SocketPlus()" class="chooseBtn" />
+            <label for="socket_plus_id" class="choose-label"></label>
+        </div>
+
+        <!--<div style="display: inline-block;" class="switch demo1">
             <input id="socket_plus_id" type="checkbox" onclick="SocketPlus()">
             <label></label>
-        </div>
+        </div>-->
     </div>
 
     <div style="margin-top: 10px">
         <div style="display: inline-block;color: #2430ff" class="div-left-first">定时监测插座：</div>
-        <div style="display: inline-block;" class="switch demo1">
+        <!--<div style="display: inline-block;" class="switch demo1">
             <input id="timer_id" type="checkbox" onclick="TimerListen()">
             <label></label>
+        </div>-->
+
+        <div style="display: inline-block;" >
+            <input type="checkbox" name="sex" id="timer_id" onclick="TimerListen()" class="chooseBtn" />
+            <label for="timer_id" class="choose-label"></label>
         </div>
     </div>
 
