@@ -107,7 +107,7 @@ public class MiSocketPlusManager {
                         try {
                             lock.wait();
                         } catch (InterruptedException e) {
-                            e.printStackTrace();
+//                            e.printStackTrace();
                         }
                     }
                 }

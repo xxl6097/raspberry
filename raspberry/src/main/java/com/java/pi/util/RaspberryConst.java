@@ -13,7 +13,7 @@ public class RaspberryConst {
     public final static class ENTITY {
         public final static String MI_SOCKET = "switch.mi_socket_plus";
         public final static String MI_SOCKET_USB = "switch.mi_socket_plus_usb";
-        public final static String MAC_WAKE_UP = "switch.mi_socket_plus_usb";
+        public final static String MAC_WAKE_UP = "switch.mac";
         //{"entity_id": "light.yeelight_ceiling_34ce00be19cc"}
         public final static String LIGHT_YEELIGHT = "light.yeelight_ceiling_34ce00be19cc";
         public final static String LIGHT_GATEWAY = "light.gateway_light_286c07fa314f";
