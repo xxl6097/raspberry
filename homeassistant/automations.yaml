@@ -1,59 +1,69 @@
-- id: '1525163342572'
-  alias: MQMiLightOff
-  trigger:
-  - payload: 'off'
-    platform: mqtt
-    topic: light
-  condition: []
-  action:
-  - alias: ''
-    data:
-      entity_id: light.yeelight
-    service: light.turn_off
-- id: '1525163342573'
-  alias: MQMiLightOn
-  trigger:
-  - payload: 'on'
-    platform: mqtt
-    topic: light
-  condition: []
-  action:
-  - alias: ''
-    data:
-      entity_id: light.yeelight
-    service: light.turn_on
-- id: '1525611630045'
-  alias: LightLowSocketOn
-  trigger:
-  - above: '2'
-    below: '3'
-    entity_id: light.yeelight
-    platform: numeric_state
-    value_template: '{{ state.attributes.brightness }}'
-  condition: []
-  action:
-  - data:
-      entity_id: switch.mi_socket_plus
-    service: switch.turn_on
-- id: '1525681734151'
-  alias: MQMISocketON
-  trigger:
-  - payload: 'on'
-    platform: mqtt
-    topic: switch
-  condition: []
-  action:
-  - data:
-      entity_id: switch.mi_socket_plus
-    service: switch.turn_on
-- id: '1525681778219'
-  alias: MQMiSocketOFF
-  trigger:
-  - payload: 'off'
-    platform: mqtt
-    topic: switch
-  condition: []
-  action:
-  - data:
-      entity_id: switch.mi_socket_plus
-    service: switch.turn_off
+#- id: MQTT Yeelight On
+#  alias: MQTT Yeelight On
+#  trigger:
+#  - payload: 'on'
+#    platform: mqtt
+#    topic: yeelight
+#  condition: []
+#  action:
+#  - data:
+#      entity_id: light.yeelight_ceiling_34ce00be19cc
+#    service: light.turn_on
+#- id: MQTT Yeelight Off
+#  alias: MQTT Yeelight Off
+#  trigger:
+#  - payload: 'off'
+#    platform: mqtt
+#    topic: yeelight
+#  condition: []
+#  action:
+#  - data:
+#      entity_id: light.yeelight_ceiling_34ce00be19cc
+#    service: light.turn_off
+#- id: MQTT Socket Plus Off
+#  alias: MQTT Socket Plus Off
+#  trigger:
+#  - payload: 'off'
+#    platform: mqtt
+#    topic: socket
+#  condition: []
+#  action:
+#  - data:
+#      entity_id: switch.mi_socket_plus
+#    service: switch.turn_off
+#
+#- id: MQTT Socket Plus USB Off
+#  alias: MQTT Socket Plus USB Off
+#  trigger:
+#  - payload: 'off'
+#    platform: mqtt
+#    topic: socketusb
+#  condition: []
+#  action:
+#  - data:
+#      entity_id: switch.mi_socket_plus_usb
+#    service: switch.turn_off
+#
+#- id: MQTT Socket Plus USB On
+#  alias: MQTT Socket Plus USB On
+#  trigger:
+#  - payload: 'on'
+#    platform: mqtt
+#    topic: socketusb
+#  condition: []
+#  action:
+#  - data:
+#      entity_id: switch.mi_socket_plus_usb
+#    service: switch.turn_on
+#
+#- id: Wake Up My Mac Book
+#  alias: Wake Up My Mac Book
+#  trigger:
+#  - payload: 'on'
+#    platform: mqtt
+#    topic: macbook
+#  condition: []
+#  action:
+#  - data:
+#      entity_id: switch.mac
+#    service: switch.turn_on

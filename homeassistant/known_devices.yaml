@@ -79,3 +79,19 @@ unknown:
   name: Yeelight吸顶灯
   picture:
   track: true
+
+uuxia:
+  hide_if_away: false
+  icon:
+  mac:
+  name: uuxia
+  picture:
+  track: true
+
+uuxiamacbookpro:
+  hide_if_away: false
+  icon:
+  mac:
+  name: uuxia的MacBook Pro
+  picture:
+  track: true
