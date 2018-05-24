@@ -1,5 +1,9 @@
 package com.ws.log;
 
+import com.ws.log.ws.WsServer;
+
+import org.java_websocket.WebSocketImpl;
+
 import java.io.IOException;
 import java.net.URI;
 
@@ -16,7 +20,6 @@ public class Main {
     private void start() {
         WebSocketContainer container = null;
         try {
-            ServerContainer
             container = ContainerProvider.getWebSocketContainer();
         } catch (Exception ex) {
             System.out.println("error" + ex);
@@ -38,8 +41,8 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO Auto-generated method stub
-        Main client = new Main();
-        client.start();
+//        Main client = new Main();
+//        client.start();
 //        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 //        String input = "";
 //        try {
@@ -52,5 +55,12 @@ public class Main {
 //            // TODO Auto-generated catch block
 //            e.printStackTrace();
 //        }
+
+
+
+        WebSocketImpl.DEBUG = false;
+        int port = 8080; // 端口
+        WsServer s = new WsServer(port);
+        s.start();
     }
 }

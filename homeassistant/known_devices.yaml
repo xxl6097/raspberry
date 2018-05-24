@@ -95,3 +95,43 @@ uuxiamacbookpro:
   name: uuxia的MacBook Pro
   picture:
   track: true
+
+10bd1808ca53:
+  hide_if_away: false
+  icon:
+  mac: 10:BD:18:08:CA:53
+  name: 10bd1808ca53
+  picture:
+  track: true
+
+8cec4b588109:
+  hide_if_away: false
+  icon:
+  mac: 8C:EC:4B:58:81:09
+  name: 8cec4b588109
+  picture:
+  track: true
+
+6001949fa07f:
+  hide_if_away: false
+  icon:
+  mac: 60:01:94:9F:A0:7F
+  name: 6001949fa07f
+  picture:
+  track: true
+
+404e368911c8:
+  hide_if_away: false
+  icon:
+  mac: 40:4E:36:89:11:C8
+  name: 404e368911c8
+  picture:
+  track: true
+
+18fe34d85c49:
+  hide_if_away: false
+  icon:
+  mac: 18:FE:34:D8:5C:49
+  name: 18fe34d85c49
+  picture:
+  track: true
