@@ -124,8 +124,8 @@ script: !include scripts.yaml
 switch:
   - platform: xiaomi_miio
     name: 小米插座增强版
-#    host: 192.168.31.20
-    host: 192.168.1.103
+    host: 192.168.31.20
+#    host: 192.168.1.103
     token: 204266477f56270ae401a49e07a2210f
   - platform: xiaomi_miio
     name: 小米插线板

@@ -12,9 +12,9 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         //启动HTTP服务
-//        startServer(args);
-//        //每30s检测一次MiSocketPlus状态，如果关闭了，则开启
-//        MiSocketPlusManager.getInstance().keepMiSocketPlusHangon(30);
+        startServer(args);
+        //每30s检测一次MiSocketPlus状态，如果关闭了，则开启
+        MiSocketPlusManager.getInstance().keepMiSocketPlusHangon(30);
         //启动MQTT
         MQHandler.startMQ();
     }
