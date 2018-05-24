@@ -124,8 +124,8 @@ script: !include scripts.yaml
 switch:
   - platform: xiaomi_miio
     name: 小米插座增强版
-    host: 192.168.31.20
-#    host: 192.168.1.103
+#    host: 192.168.31.20
+    host: 192.168.1.103
     token: 204266477f56270ae401a49e07a2210f
   - platform: xiaomi_miio
     name: 小米插线板
@@ -165,8 +165,8 @@ device_tracker:
     username: xiaxiaoli_2005@163.com  #设置icloud账号名
     password: Xxl2475431305.  #设置icloud密码
     account_name: iPhone  #此为可选项，设置icloud账号在Home Assistant中的名称
-#  - platform: nmap_tracker
-#    hosts: 192.168.1.0/24
+  - platform: nmap_tracker
+    hosts: 192.168.1.0/24
 
 
 

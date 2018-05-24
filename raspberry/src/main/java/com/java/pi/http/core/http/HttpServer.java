@@ -67,7 +67,7 @@ public class HttpServer extends NanoHTTPD {
                 e.printStackTrace();
             }
         }*/
-        Response response = com.java.pi.http.core.HttpServerManager.getInstance().onResponse(session);
+         Response response = com.java.pi.http.core.HttpServerManager.getInstance().onResponse(session);
         if (response !=null){
             Logc.d("=========Server.serve.response:" + response.toString());
 //            return new Response(Response.Status.OK, "text/plain; charset=UTF-8",response);
