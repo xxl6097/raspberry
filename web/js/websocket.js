@@ -149,8 +149,7 @@ function processSocketPlus(state) {
     }
 }
 
-function processYeelight(data) {
-    var state = data.new_state.state;
+function processYeelight(state) {
     var socketplus = getId('yeelight_id');
     if (state == 'on'){
         socketplus.checked = true;
