@@ -1,5 +1,4 @@
 include ':app'
 include ':raspberry'
 include ':mqtt'
-include ':javalog'
 //include ':httpserver'
