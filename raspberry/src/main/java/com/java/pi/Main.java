@@ -2,9 +2,7 @@ package com.java.pi;
 
 import com.java.log.JavaLog;
 import com.java.pi.http.Server;
-import com.java.pi.mq.MQHandler;
 import com.java.pi.services.MiSocketPlusManager;
-import com.java.pi.util.RaspberryConst;
 import com.java.pi.wifi.LanDiscover;
 
 import java.io.IOException;
@@ -17,7 +15,7 @@ public class Main {
         //每30s检测一次MiSocketPlus状态，如果关闭了，则开启
         MiSocketPlusManager.getInstance().keepMiSocketPlusHangon(30);
         //启动MQTT
-        MQHandler.startMQ();
+//        MQHandler.startMQ();
         //查看日志
         JavaLog.startLog(8126,args[1]);
     }

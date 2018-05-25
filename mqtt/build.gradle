@@ -14,5 +14,18 @@ jar {
         attributes 'Main-Class': 'com.pi.mqtt.Main'
     }
 }
+
+
+task makeJar(type:Copy,dependsOn:build) {
+    delete 'mqtt.jar'
+    from('build/libs/')
+    into('/')
+    include('mqtt.jar')
+    rename('mqtt.jar', 'mqtt.jar')
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
 sourceCompatibility = "1.7"
 targetCompatibility = "1.7"
