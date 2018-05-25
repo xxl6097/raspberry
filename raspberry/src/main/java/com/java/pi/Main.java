@@ -1,5 +1,6 @@
 package com.java.pi;
 
+import com.java.log.JavaLog;
 import com.java.pi.http.Server;
 import com.java.pi.mq.MQHandler;
 import com.java.pi.services.MiSocketPlusManager;
@@ -17,6 +18,8 @@ public class Main {
         MiSocketPlusManager.getInstance().keepMiSocketPlusHangon(30);
         //启动MQTT
         MQHandler.startMQ();
+        //查看日志
+        JavaLog.startLog(8126);
     }
 
 
