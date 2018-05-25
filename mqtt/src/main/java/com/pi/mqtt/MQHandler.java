@@ -1,6 +1,5 @@
-package com.java.pi.mq;
+package com.pi.mqtt;
 
-import com.pi.mqtt.JavaMq;
 import com.pi.mqtt.bean.MqttConnBean;
 import com.pi.mqtt.listener.OnConnectListener;
 
