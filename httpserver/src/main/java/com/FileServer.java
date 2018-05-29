@@ -4,6 +4,7 @@ import com.het.httpserver.http.SimpleHttpUtils;
 import com.het.httpserver.util.Util;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,7 +12,12 @@ import java.util.Map;
 public class FileServer
 {
     public static void main(String[] args) {
-        uploadFile();
+        //uploadFile();
+        try {
+            Runtime.getRuntime().exec("reboot");//注销
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 

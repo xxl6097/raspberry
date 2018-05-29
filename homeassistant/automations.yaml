@@ -11,8 +11,6 @@
       payload: I folowwo you
       topic: socket
     service: mqtt.publish
-
-
 - id: '1527058706033'
   alias: socket
   trigger:
@@ -26,19 +24,17 @@
       payload: waa
       topic: socket
     service: mqtt.publish
-
-
-- id: '1527060957095'
-  alias: socket-unavailable
-  trigger:
-  - entity_id: switch.mi_socket_plus
-    from: 'on'
-    platform: state
-    to: unavailable
-  - entity_id: switch.mi_socket_plus
-    from: 'off'
-    platform: state
-    to: unavailable
-  condition: []
-  action:
-  - service: homeassistant.restart
+#- id: '1527060957095'
+#  alias: unavailable
+#  trigger:
+#  - entity_id: switch.mi_socket_plus
+#    from: 'on'
+#    platform: state
+#    to: unavailable
+#  - entity_id: switch.mi_socket_plus
+#    from: 'off'
+#    platform: state
+#    to: unavailable
+#  condition: []
+#  action:
+#  - service: homeassistant.restart
