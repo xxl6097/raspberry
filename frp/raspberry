@@ -1,0 +1,30 @@
+#!/bin/sh
+
+SERVER=/home/frp/frp_0.19.1_linux_arm
+cd $SERVER
+
+case "$1" in
+
+  start)
+    nohup ./frpc -c ./frpc.ini > $SERVER/frpc.log 2>&1 &
+    echo $! > $SERVER/frpc.pid
+    ;;
+
+  stop)
+    kill `cat $SERVER/v.pid`
+    rm -rf $SERVER/frpc.pid
+    ;;
+
+  restart)
+    $0 stop
+    sleep 1
+    $0 start
+    ;;
+
+  *)
+    echo "Usage: run.sh {start|stop|restart}"
+    ;;
+
+esac
+
+exit 0

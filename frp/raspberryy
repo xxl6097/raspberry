@@ -1,0 +1,30 @@
+#!/bin/sh
+
+SERVER=/home/java
+cd $SERVER
+
+case "$1" in
+
+  start)
+    nohup java -Xmx128m -jar raspberry.jar 8888 $SERVER/raspberry.log > $SERVER/raspberry.log 2>&1 &
+    echo $! > $SERVER/raspberry.pid
+    ;;
+
+  stop)
+    kill `cat $SERVER/raspberry.pid`
+    rm -rf $SERVER/raspberry.pid
+    ;;
+
+  restart)
+    $0 stop
+    sleep 1
+    $0 start
+    ;;
+
+  *)
+    echo "Usage: run.sh {start|stop|restart}"
+    ;;
+
+esac
+
+exit 0
