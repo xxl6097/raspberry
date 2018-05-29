@@ -63,15 +63,15 @@ public class MiSocketPlusManager {
                                 Logc.i("MiSocketTurnOn:" + result);
                                 if (!Util.isEmpty(result)) {
                                     if (result.equals("[]")) {
-                                        result = RaspBerryApi.HomeAssistantRestart();
-                                        Logc.i("HomeAssistantRestart.response:" + result);
+                                        result = RaspBerryApi.RaspberryRestart();
+                                        Logc.i("RaspberryRestart.response:" + result);
                                     }
                                 } else {
                                 }
                             } else if (state == MIState.ON) {
                             } else if (state == MIState.UNAVAILABLE){
-                                result = RaspBerryApi.HomeAssistantRestart();
-                                Logc.i("HomeAssistantRestart.response:" + result);
+                                result = RaspBerryApi.RaspberryRestart();
+                                Logc.i("RaspberryRestart.response:" + result);
                             }
                             lock.wait(time * 1000);
                         } catch (InterruptedException e) {

@@ -6,6 +6,8 @@ import com.java.pi.http.util.GsonUtil;
 import com.java.pi.util.Logc;
 import com.java.pi.util.RaspberryConst;
 
+import java.io.IOException;
+
 public class RaspBerryApi {
 //light.yeelight
 //    [
@@ -30,13 +32,22 @@ public class RaspBerryApi {
         return null;
     }
 
-
-    public static String HomeAssistantRestart() throws InterruptedException {
+    public static String HARestart() throws InterruptedException {
         String body = "";
         String path = RaspberryConst.SERVICES.HB_RESTART;
         String result = RaspberryHttp(path, body);
         Thread.sleep(60*1000);
         return result;
+    }
+
+
+    public static String RaspberryRestart() throws InterruptedException {
+        try {
+            Runtime.getRuntime().exec("reboot");//注销
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "[]";
     }
 
     public static String WakeUpMyMacOs() {
@@ -181,6 +192,6 @@ public class RaspBerryApi {
 //        MiSocketTurnOn();
 //        MiSocketTurnOff();
 //        MiSocketSwitch();
-//        HomeAssistantRestart();
+//        RaspberryRestart();
     }
 }
