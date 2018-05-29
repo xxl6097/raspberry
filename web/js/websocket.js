@@ -25,8 +25,8 @@ function load() {
 }
 
 function connect() {
-    //var host = "ws://" + ip +":8123/api/websocket"
-    var host = "ws://uuxia.cn:8882/api/websocket";
+    var host = "ws://" + ip +":8123/api/websocket"
+//    var host = "ws://uuxia.cn:8882/api/websocket";
     console.log("####websocket info " + host);
     socket = new WebSocket(host);
     try {
