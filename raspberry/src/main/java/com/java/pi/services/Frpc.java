@@ -1,19 +1,10 @@
-package com.example.test;
+package com.java.pi.services;
+
+import com.java.pi.util.Ping;
 
 import java.io.IOException;
 
-public class MyClass {
-    public static void main(String[] args) {
-//        try {
-//            Runtime.getRuntime().exec("systemctl restart home-assistant@root");//注销
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-
-        startFrpc();
-    }
-
-
+public class Frpc {
     public static void startFrpc(){
         new Thread(new Runnable() {
             @Override
@@ -22,7 +13,7 @@ public class MyClass {
                     boolean conn = Ping.isConnBaidu(3000);
                     if (conn){
                         try {
-                            Runtime.getRuntime().exec("/home/frp/frp_0.19.1_linux_arm/frpcerver start");//注销
+                            Runtime.getRuntime().exec("sh /home/bootstart");//注销
                         } catch (IOException e) {
                             e.printStackTrace();
                         }

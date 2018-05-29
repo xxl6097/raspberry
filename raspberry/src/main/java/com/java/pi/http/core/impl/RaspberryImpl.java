@@ -245,7 +245,7 @@ public class RaspberryImpl extends com.java.pi.http.core.AbstractGetHttpFactory 
                 }
                 if (result.equals("[]")){
                     try {
-                        RaspBerryApi.RaspberryRestart();
+                        RaspBerryApi.HomeAssistantRestart();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -258,7 +258,7 @@ public class RaspberryImpl extends com.java.pi.http.core.AbstractGetHttpFactory 
                 }
                 if (result.equals("[]")){
                     try {
-                        RaspBerryApi.RaspberryRestart();
+                        RaspBerryApi.HomeAssistantRestart();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -268,7 +268,7 @@ public class RaspberryImpl extends com.java.pi.http.core.AbstractGetHttpFactory 
         }else if(entityid.equals("homeassistant")){
             if (state.equals("restart")){
                 try {
-                    result = RaspBerryApi.RaspberryRestart();
+                    result = RaspBerryApi.HomeAssistantRestart();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

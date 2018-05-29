@@ -1,4 +1,4 @@
-package com.java.pi.util;
+package com.example.test;
 
 import java.io.BufferedReader;
 import java.io.IOException;

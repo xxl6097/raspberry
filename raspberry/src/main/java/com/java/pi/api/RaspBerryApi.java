@@ -41,12 +41,13 @@ public class RaspBerryApi {
     }
 
 
-    public static String RaspberryRestart() throws InterruptedException {
+    public static String HomeAssistantRestart() throws InterruptedException {
         try {
-            Runtime.getRuntime().exec("reboot");//注销
+            Runtime.getRuntime().exec("systemctl restart home-assistant@root");//注销
         } catch (IOException e) {
             e.printStackTrace();
         }
+        Thread.sleep(60*1000);
         return "[]";
     }
 
@@ -192,6 +193,6 @@ public class RaspBerryApi {
 //        MiSocketTurnOn();
 //        MiSocketTurnOff();
 //        MiSocketSwitch();
-//        RaspberryRestart();
+//        HomeAssistantRestart();
     }
 }
