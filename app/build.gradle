@@ -21,18 +21,16 @@ android {
 //provided
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile project(':raspberry')
+//    compile project(':raspberry')
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.tbruyelle.rxpermissions:rxpermissions:0.9.4@aar'
     compile 'io.reactivex:rxandroid:1.2.1'
-    compile('com.github.szhittech:gwwebsocketsdk:0.0.0-SNAPSHOT') {
-        changing = true;
-    }
+    compile('com.github.szhittech:gwwebsocketsdk:0.0.0-SNAPSHOT') {changing = true;}
 }
 configurations {
     //编译期排除gson模块
-    compile.exclude module: 'gson'
+//    compile.exclude module: 'gson'
 }
 configurations.all {
     resolutionStrategy.cacheChangingModulesFor 0, 'seconds'

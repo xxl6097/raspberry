@@ -1,0 +1,52 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'net.researchgate:gradle-release:2.4.0' // release plugin
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'idea'
+apply plugin: 'net.researchgate.release'
+
+ext {
+    civersion = '1.1.1-SNAPSHOT';//System.getProperty("ci-version") ?: "${project.version}"
+    maven_username = 'clife-android'
+    maven_password = 'add123'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+//upload war | jar to nexus
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "http://200.200.200.40:8083/nexus/content/repositories/clife-android-snapshots/") {
+                authentication(userName: "${maven_username}", password: "${maven_password}")
+            }
+            pom.version = "${civersion}"
+            pom.artifactId = "${project.archivesBaseName}"
+            pom.groupId = "${project.group}"
+        }
+    }
+}
+
+
+//config release task
+release {
+    tagCommitMessage = "[Gradle Release Plugin] - creating tag: "
+    scmAdapters = [
+            net.researchgate.release.GitAdapter,
+    ]
+}
+
+//当需要 relase Task 之前执行 upload 操作时配置依赖
+//afterReleaseBuild.dependsOn uploadArchives

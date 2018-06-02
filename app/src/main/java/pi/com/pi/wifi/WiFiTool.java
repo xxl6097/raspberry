@@ -10,7 +10,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 
-import com.java.pi.util.Logc;
+import com.fsix.mqtt.util.Logc;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -82,6 +82,9 @@ public class WiFiTool {
                 wiFiConnCallback.onWiFiConnected(ssid, password);
                 return;
             }
+        }
+        if (mWifiUtils!=null){
+            mWifiUtils.WifiOpen();
         }
         if (threadCheckDone != null) {
             threadCheckDone.interrupt();

@@ -1,6 +1,7 @@
 package com.example.test;
 
 import java.io.IOException;
+import java.util.Random;
 
 public class MyClass {
     public static void main(String[] args) {
@@ -10,7 +11,10 @@ public class MyClass {
 //            e.printStackTrace();
 //        }
 
-        startFrpc();
+        String monitorMac = "AAAAAA";
+        monitorMac = monitorMac + new Random().nextInt(1000000);
+        System.out.println(monitorMac);
+        //startFrpc();
     }
 
 

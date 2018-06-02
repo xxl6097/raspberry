@@ -1,0 +1,140 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'net.researchgate:gradle-release:2.4.0' // release plugin
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'idea'
+apply plugin: 'net.researchgate.release'
+
+def isHet() {
+    def has = hasProperty('NEXUS_TYPE');
+    if (has) {
+        return NEXUS_TYPE.contains("maven") ? false : true;
+    } else {
+        return true;
+    }
+}
+
+def isSourceCode() {
+    def has = hasProperty('SOURCESCODE');
+    if (has) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+def isReleaseBuild() {
+    return rootProject.ext.libsversion["${project.modulename}"].contains("SNAPSHOT") == false
+}
+
+def getReleaseRepositoryUrl() {
+    if (isHet()) {
+        return rootProject.ext.config.HET_NEXUS_RELEASES
+    } else {
+        return rootProject.ext.config.JCENTER_NEXUS_RELEASES
+    }
+}
+
+def getSnapshotRepositoryUrl() {
+    if (isHet()) {
+        return rootProject.ext.config.HET_NEXUS_SNAPSHOTS
+    } else {
+        return rootProject.ext.config.JCENTER_NEXUS_SNAPSHOTS
+    }
+}
+
+def getRepositoryUsername() {
+    if (isHet()) {
+        return rootProject.ext.config.NEXUS_USERNAME_HET
+    } else {
+        return rootProject.ext.config.NEXUS_USERNAME
+    }
+
+}
+
+def getRepositoryPassword() {
+    if (isHet()) {
+        return rootProject.ext.config.NEXUS_PASSWORD_HET
+    } else {
+        return rootProject.ext.config.NEXUS_PASSWORD
+    }
+}
+
+
+afterEvaluate { project ->
+    //upload war | jar to nexus
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+                if (isReleaseBuild()) {
+                    //becase het is not sigining pad POM_ARTIFACT_ID VERSION_NAME
+                    beforeDeployment {
+                        MavenDeployment deployment -> signing.signPom(deployment)
+                    }
+                    if (isHet()) {
+                        logger.lifecycle("==正在打Release版到HeT Center===" + rootProject.ext.config.GROUP + ":" + rootProject.ext.libsname["${project.modulename}"] + ":" + rootProject.ext.libsversion["${project.modulename}"] + " URL:"+getReleaseRepositoryUrl())
+                    } else {
+                        logger.lifecycle("==正在打Release版到JCenter===" + rootProject.ext.config.GROUP + ":" + rootProject.ext.libsname["${project.modulename}"] + ":" + rootProject.ext.libsversion["${project.modulename}"] + " URL:"+getReleaseRepositoryUrl())
+                    }
+                } else {
+                    if (isHet()) {
+                        logger.lifecycle("==正在打SNAPSHOT版到HeTCenter=" + rootProject.ext.config.GROUP + ":" + rootProject.ext.libsname["${project.modulename}"] + ":" + rootProject.ext.libsversion["${project.modulename}"] + " URL:"+getSnapshotRepositoryUrl())
+                    } else {
+                        logger.lifecycle("==正在打SNAPSHOT版到JCenter=" + rootProject.ext.config.GROUP + ":" + rootProject.ext.libsname["${project.modulename}"] + ":" + rootProject.ext.libsversion["${project.modulename}"] + " URL:"+getSnapshotRepositoryUrl())
+                    }
+                }
+
+                pom.groupId = rootProject.ext.config.GROUP
+                pom.artifactId = rootProject.ext.libsname["${project.modulename}"]
+                pom.version = rootProject.ext.libsversion["${project.modulename}"]
+
+                repository(url: getReleaseRepositoryUrl()) {
+                    authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
+                }
+                snapshotRepository(url: getSnapshotRepositoryUrl()) {
+                    authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
+                }
+                pom.project {
+                    name project.modulename
+                    packaging rootProject.ext.config.POM_PACKAGING
+                    description rootProject.ext.config.POM_DESCRIPTION
+                    url rootProject.ext.config.POM_URL
+
+                    scm {
+                        url rootProject.ext.config.POM_SCM_URL
+                        connection rootProject.ext.config.POM_SCM_CONNECTION
+                        developerConnection rootProject.ext.config.POM_SCM_DEV_CONNECTION
+                    }
+                    licenses {
+                        license {
+                            name rootProject.ext.config.POM_LICENCE_NAME
+                            url rootProject.ext.config.POM_LICENCE_URL
+                            distribution rootProject.ext.config.POM_LICENCE_DIST
+                        }
+                    }
+
+                    developers {
+                        developer {
+                            id rootProject.ext.config.POM_DEVELOPER_ID
+                            name rootProject.ext.config.POM_DEVELOPER_NAME
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    if (isReleaseBuild()) {
+        signing {
+            required { isReleaseBuild() && gradle.taskGraph.hasTask("uploadArchives") }
+            sign configurations.archives
+        }
+    }
+}

@@ -2,13 +2,19 @@ package pi.com.pi.base;
 
 import android.Manifest;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.tbruyelle.rxpermissions.RxPermissions;
 
+import pi.com.pi.R;
 import pi.com.pi.util.AppTools;
 import pi.com.pi.util.Base64;
 import pi.com.pi.util.SpUtil;
@@ -113,6 +119,23 @@ public abstract class BaseActivity extends AppCompatActivity {
         });
     }
 
+
+    protected void showDialog() {
+        View view = LayoutInflater.from(this).inflate(R.layout.dialog, null);
+        final EditText ssid = (EditText) view.findViewById(R.id.ssid_id);
+        final EditText pass = (EditText) view.findViewById(R.id.pass_id);
+        new AlertDialog.Builder(this)
+                .setTitle("WiFi连接")
+                .setView(view)
+                .setPositiveButton("连接", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                })
+                .setNegativeButton("取消", null)
+                .setCancelable(false)
+                .show();
+    }
 
     protected abstract int getLayoutId();
 

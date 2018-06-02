@@ -1,6 +1,5 @@
 package pi.com.pi.ui;
 
-import android.app.ProgressDialog;
 import android.net.wifi.ScanResult;
 import android.os.Handler;
 import android.os.Looper;
@@ -11,7 +10,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.java.pi.util.Logc;
+
+import com.fsix.mqtt.util.Logc;
 
 import java.util.HashMap;
 import java.util.List;
@@ -105,20 +105,20 @@ public class WiFiSettingActivity extends BaseActivity implements AdapterView.OnI
             @Override
             public int onWiFiConnected(final String ssid, String password) {
                 Logc.i("onWiFiConnected " + ssid + " " + password);
-                tips("连接成功");
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        title.setText("当前WiFi："+ssid);
-                    }
-                });
-                hideLoading();
-                return 1;
+                return 0;
             }
 
             @Override
-            public boolean onInternetConnected(String ip) {
+            public boolean onInternetConnected(final String ip) {
                 Logc.i("onInternetConnected " + ip);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        title.setText("当前WiFi："+ip);
+                    }
+                });
+                hideLoading();
+                tips("连接成功");
                 return true;
             }
 

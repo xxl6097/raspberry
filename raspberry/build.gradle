@@ -31,3 +31,9 @@ tasks.withType(JavaCompile) {
 }
 sourceCompatibility = "1.7"
 targetCompatibility = "1.7"
+
+ext {
+    //这个地方的设置一定要正确，很重要，填写错误后果很严重
+    modulename = rootProject.ext.libsname.techtcpsdk
+}
+apply from: '../upload.gradle'
