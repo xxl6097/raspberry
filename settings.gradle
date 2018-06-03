@@ -4,3 +4,4 @@
 //include ':httpserver'
 include ':techtcpsdk'
 //include ':test'
+include ':hetprotosdk'
